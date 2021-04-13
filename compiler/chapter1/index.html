@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1. 需求分析 | JavaScript 基础知识</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="对 Javascript 学习的记录总结">
+    
+    <link rel="preload" href="/yg-notes/assets/css/0.styles.f9f6a012.css" as="style"><link rel="preload" href="/yg-notes/assets/js/app.ee573e6d.js" as="script"><link rel="preload" href="/yg-notes/assets/js/2.ef5320bc.js" as="script"><link rel="preload" href="/yg-notes/assets/js/8.f1172b79.js" as="script"><link rel="prefetch" href="/yg-notes/assets/js/10.1abce6e0.js"><link rel="prefetch" href="/yg-notes/assets/js/11.9ab3eb15.js"><link rel="prefetch" href="/yg-notes/assets/js/12.b0df4f8a.js"><link rel="prefetch" href="/yg-notes/assets/js/13.61ed9be0.js"><link rel="prefetch" href="/yg-notes/assets/js/3.f34435cc.js"><link rel="prefetch" href="/yg-notes/assets/js/4.e05c873c.js"><link rel="prefetch" href="/yg-notes/assets/js/5.f3e6ed41.js"><link rel="prefetch" href="/yg-notes/assets/js/6.498ab014.js"><link rel="prefetch" href="/yg-notes/assets/js/7.81887c2f.js"><link rel="prefetch" href="/yg-notes/assets/js/9.d2c63ece.js">
+    <link rel="stylesheet" href="/yg-notes/assets/css/0.styles.f9f6a012.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/yg-notes/" class="home-link router-link-active"><!----> <span class="site-name">JavaScript 基础知识</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/yg-notes/jsbase/chapter1/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/yg-notes/css/chapter1/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/yg-notes/compiler/chapter1/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Compiler
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/yg-notes/jsbase/chapter1/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/yg-notes/css/chapter1/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/yg-notes/compiler/chapter1/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Compiler
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>compiler 编辑器</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/yg-notes/compiler/chapter1/" aria-current="page" class="active sidebar-link">1. 需求分析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/yg-notes/compiler/chapter1/#_1-需求分析" class="sidebar-link">1. 需求分析</a></li><li class="sidebar-sub-header"><a href="/yg-notes/compiler/chapter1/#_2-编译器工作流" class="sidebar-link">2. 编译器工作流</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/yg-notes/compiler/chapter1/#_2-1-解析-parsing" class="sidebar-link">2.1 解析(Parsing)</a></li><li class="sidebar-sub-header"><a href="/yg-notes/compiler/chapter1/#_2-2-遍历-traversal" class="sidebar-link">2.2 遍历(Traversal)</a></li><li class="sidebar-sub-header"><a href="/yg-notes/compiler/chapter1/#_2-3-转换-transformation" class="sidebar-link">2.3 转换(Transformation)</a></li><li class="sidebar-sub-header"><a href="/yg-notes/compiler/chapter1/#_2-4-代码生成-code-generation" class="sidebar-link">2.4 代码生成(Code Generation)</a></li></ul></li><li class="sidebar-sub-header"><a href="/yg-notes/compiler/chapter1/#_3-有限状态机" class="sidebar-link">3. 有限状态机</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_1-需求分析"><a href="#_1-需求分析" class="header-anchor">#</a> 1. 需求分析</h2> <ul><li>实现 JSX 语法转成 JS 语法的编译器</li> <li>需求：将一段 JSX 语法的代码生成一个 AST ，并支持遍历和修改这个 AST ，将 AST 重新生成 JS 语法的代码</li></ul> <p>JSX 代码</p> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>title<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">hello</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">world</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>JS 代码</p> <div class="language-js extra-class"><pre class="language-js"><code>React<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'h1'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+  id<span class="token operator">:</span> <span class="token string">'title'</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>React<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'span'</span><span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">,</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'world'</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="_2-编译器工作流"><a href="#_2-编译器工作流" class="header-anchor">#</a> 2. 编译器工作流</h2> <ul><li>解析(Parsing) <strong>解析</strong>是将最初原始的代码转换为一种更加抽象的表示(即AST)</li> <li>转换(Transformation) <strong>转换</strong>将对这个抽象的表示做一些处理，让它能做到编译器期望它做到的事情</li> <li>代码生成(Code Generation) 接收处理之后的代码表示，然后把它转换成新的代码</li></ul> <h3 id="_2-1-解析-parsing"><a href="#_2-1-解析-parsing" class="header-anchor">#</a> 2.1 解析(Parsing)</h3> <ul><li>解析一般来说会分成两个阶段：词法分析(Lexical Analysis)和语法分析(Syntactic Analysis)
+<ul><li><code>词法分析</code> 接收原始代码,然后把它分割成一些被称为<code>token</code> 的东西，这个过程是在词法分析器(Tokenizer 或者 Lexer)中完的</li> <li>Token 是一个数组，由一些代码语句的碎片组成。它们可以是数字、标签、标点符号、运算符或者其它任何东西</li> <li><code>语法分析</code> 接收之前生成的<code>token</code> 把它们转换成一种抽象的表示，这种抽象的表示描述了代码语句中的每一个片段以及它们之间的关系，这被称为中间表示(Intermediate representation)或抽象语法树(Abastract Syntax Tree,缩写为AST)</li> <li>抽象语法树是一个嵌套程度很深的对象，用一种更容易处理的方式代表了代码本身，也能给我们更多信息
+原始 <code>jsx</code> 代码</li></ul></li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>h1 id<span class="token operator">=</span><span class="token string">&quot;title&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>hello<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>world<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+</code></pre></div><p>tokens</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'Punctuator'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'&lt;'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'JSXIdentifier'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'h1'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'JSXIdentifier'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'id'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'Punctuator'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'='</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'String'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'&quot;title&quot;'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'Punctuator'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'&gt;'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'Punctuator'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'&lt;'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'JSXIdentifier'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'span'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'Punctuator'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'&gt;'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'JSXText'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'hello'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'Punctuator'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'&lt;'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'Punctuator'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'/'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'JSXIdentifier'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'span'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'Punctuator'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'&gt;'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'JSXText'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'world'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'Punctuator'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'&lt;'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'Punctuator'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'/'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'JSXIdentifier'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'h1'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'Punctuator'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'&gt;'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre></div><p>抽象语法树 AST
+<a href="https://astexplorer.net/" target="_blank" rel="noopener noreferrer">astexplorer<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Program&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;body&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ExpressionStatement&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;expression&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXElement&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;openingElement&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXOpeningElement&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXIdentifier&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;h1&quot;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;selfClosing&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;attributes&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXAttribute&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXIdentifier&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;id&quot;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;value&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Literal&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;raw&quot;</span><span class="token operator">:</span> <span class="token string">&quot;\&quot;title\&quot;&quot;</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;children&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXElement&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;openingElement&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXOpeningElement&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXIdentifier&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;span&quot;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;selfClosing&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;attributes&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;children&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+              <span class="token punctuation">{</span>
+                <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXText&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;raw&quot;</span><span class="token operator">:</span> <span class="token string">&quot;hello&quot;</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;closingElement&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXClosingElement&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXIdentifier&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;span&quot;</span><span class="token number">2</span>
+                <span class="token punctuation">]</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXText&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;world&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;raw&quot;</span><span class="token operator">:</span> <span class="token string">&quot;world&quot;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;closingElement&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXClosingElement&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JSXIdentifier&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;h1&quot;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;sourceType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;module&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_2-2-遍历-traversal"><a href="#_2-2-遍历-traversal" class="header-anchor">#</a> 2.2 遍历(Traversal)</h3> <ul><li>为了能处理所有的节点，我们需要遍历它们，使用的是深度优先遍历(dfs)</li> <li>对于上面的 <code>AST</code> 的遍历流程是这样的</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> esprima <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'esprima'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> estraverse <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'estraverse-fb'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> sourceCode <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;h1 id=&quot;title&quot;&gt;&lt;span&gt;hello&lt;/span&gt;world&lt;/h1&gt;</span><span class="token template-punctuation string">`</span></span>
+
+<span class="token keyword">let</span> ast <span class="token operator">=</span> esprima<span class="token punctuation">.</span><span class="token function">parseScript</span><span class="token punctuation">(</span>sourceCode<span class="token punctuation">,</span> <span class="token punctuation">{</span> jsx<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> tokens<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> indent <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token keyword">function</span> <span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span>indent<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+estraverse<span class="token punctuation">.</span><span class="token function">traverse</span><span class="token punctuation">(</span>ast<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function">enter</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> node<span class="token punctuation">.</span>type <span class="token operator">+</span> <span class="token string">'进入'</span><span class="token punctuation">)</span>
+    indent <span class="token operator">+=</span> <span class="token number">2</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">leave</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    indent <span class="token operator">-=</span> <span class="token number">2</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> node<span class="token punctuation">.</span>type <span class="token operator">+</span> <span class="token string">'离开'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Program进入
+  ExpressionStatement进入
+    JSXElement进入
+      JSXOpeningElement进入
+        JSXIdentifier进入
+        JSXIdentifier离开
+        JSXAttribute进入
+          JSXIdentifier进入
+          JSXIdentifier离开
+          Literal进入
+          Literal离开
+        JSXAttribute离开
+      JSXOpeningElement离开
+      JSXClosingElement进入
+        JSXIdentifier进入
+        JSXIdentifier离开
+      JSXClosingElement离开
+      JSXElement进入
+        JSXOpeningElement进入
+          JSXIdentifier进入
+          JSXIdentifier离开
+        JSXOpeningElement离开
+        JSXClosingElement进入
+          JSXIdentifier进入
+          JSXIdentifier离开
+        JSXClosingElement离开
+        JSXText进入
+        JSXText离开
+      JSXElement离开
+      JSXText进入
+      JSXText离开
+    JSXElement离开
+  ExpressionStatement离开
+Program离开
+</code></pre></div><h3 id="_2-3-转换-transformation"><a href="#_2-3-转换-transformation" class="header-anchor">#</a> 2.3 转换(Transformation)</h3> <ul><li>编译器的下一步就是转换，它只是把 AST 拿过来然后对它做一些修改，它可以在同种语言下操作 AST ，也可以把 AST 翻译成全新的语言</li> <li>我们的 <code>AST</code> 中有很多相似的元素，这些元素都有 <code>type</code> 属性，他们被称为 <code>AST</code> 结点。这些结点含有若干属性，可以用于描述 AST 的部分信息</li> <li>当转换 AST 的时候我们可以添加、移动、替换这些结点，也可以根据现有的 AST 生成一个全新的 AST</li> <li>既然我们编译器的目标是把输入的代码转换为一种新的语言，所有这里会着重于产生一个针对新语言的全新的 AST</li></ul> <h3 id="_2-4-代码生成-code-generation"><a href="#_2-4-代码生成-code-generation" class="header-anchor">#</a> 2.4 代码生成(Code Generation)</h3> <ul><li>编译器的最后一个阶段是代码生成，这个阶段做的事情有时候会和转换(transformation)重叠，但是代码生成的最主要部分还是根据 AST 来输出代码</li> <li>代码生成有几种不同的工作方式，有些编译器将会重用之前生成的 token ，有些会创建独立的代码表示，但是我们这里还是着重于使用之前生成好的 AST</li> <li>我们的代码生成器需要知道如何 <code>打印</code> AST 中所有类型的结点，然后会递归地调用自身，直到所有代码都被 打印 到一个很长的字符串中</li></ul> <h2 id="_3-有限状态机"><a href="#_3-有限状态机" class="header-anchor">#</a> 3. 有限状态机</h2> <div class="language- extra-class"><pre class="language-text"><code>## ast
+- 解析我们的语法（js） =&gt; 语法树
+- 遍历树（先序深度优先） =&gt; 更改树的内容
+- 生成新的内容
+
+## esprima
+- 解析我们的语法（js） =&gt; 语法树
+
+## estraverse
+- 遍历语法树
+
+## escodegen
+- 把语法树生成
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/13/2021, 5:31:41 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/yg-notes/assets/js/app.ee573e6d.js" defer></script><script src="/yg-notes/assets/js/2.ef5320bc.js" defer></script><script src="/yg-notes/assets/js/8.f1172b79.js" defer></script>
+  </body>
+</html>
