@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CSS3 高级属性 | JavaScript 基础知识</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="对 Javascript 学习的记录总结">
+    
+    <link rel="preload" href="/yg-notes/assets/css/0.styles.f9f6a012.css" as="style"><link rel="preload" href="/yg-notes/assets/js/app.93f9341c.js" as="script"><link rel="preload" href="/yg-notes/assets/js/2.ef5320bc.js" as="script"><link rel="preload" href="/yg-notes/assets/js/9.b5b7ab43.js" as="script"><link rel="prefetch" href="/yg-notes/assets/js/10.3035486c.js"><link rel="prefetch" href="/yg-notes/assets/js/11.22f3f10a.js"><link rel="prefetch" href="/yg-notes/assets/js/12.f1481564.js"><link rel="prefetch" href="/yg-notes/assets/js/13.0eb53405.js"><link rel="prefetch" href="/yg-notes/assets/js/14.e06791e7.js"><link rel="prefetch" href="/yg-notes/assets/js/3.95796f63.js"><link rel="prefetch" href="/yg-notes/assets/js/4.e05c873c.js"><link rel="prefetch" href="/yg-notes/assets/js/5.f3e6ed41.js"><link rel="prefetch" href="/yg-notes/assets/js/6.498ab014.js"><link rel="prefetch" href="/yg-notes/assets/js/7.3f5168c2.js"><link rel="prefetch" href="/yg-notes/assets/js/8.f1172b79.js">
+    <link rel="stylesheet" href="/yg-notes/assets/css/0.styles.f9f6a012.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/yg-notes/" class="home-link router-link-active"><!----> <span class="site-name">JavaScript 基础知识</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/yg-notes/jsbase/chapter1/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/yg-notes/css/chapter1/" class="nav-link router-link-active">
+  CSS
+</a></div><div class="nav-item"><a href="/yg-notes/compiler/chapter1/" class="nav-link">
+  Compiler
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/yg-notes/jsbase/chapter1/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/yg-notes/css/chapter1/" class="nav-link router-link-active">
+  CSS
+</a></div><div class="nav-item"><a href="/yg-notes/compiler/chapter1/" class="nav-link">
+  Compiler
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>CSS 常用技巧</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/yg-notes/css/chapter1/" aria-current="page" class="sidebar-link">CSS 常见技巧</a></li><li><a href="/yg-notes/css/chapter1/CSS3GaoJie.html" aria-current="page" class="active sidebar-link">CSS3 高级属性</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/yg-notes/css/chapter1/CSS3GaoJie.html#_01-linear-gradient-线性渐变" class="sidebar-link">01.linear-gradient 线性渐变</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/yg-notes/css/chapter1/CSS3GaoJie.html#radial-gradient-径向渐变" class="sidebar-link">radial-gradient 径向渐变</a></li><li class="sidebar-sub-header"><a href="/yg-notes/css/chapter1/CSS3GaoJie.html#_04-background-size-背景尺寸" class="sidebar-link">04. background-size 背景尺寸</a></li><li class="sidebar-sub-header"><a href="/yg-notes/css/chapter1/CSS3GaoJie.html#" class="sidebar-link"></a></li><li class="sidebar-sub-header"><a href="/yg-notes/css/chapter1/CSS3GaoJie.html#-2" class="sidebar-link"></a></li></ul></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="css3-高级属性"><a href="#css3-高级属性" class="header-anchor">#</a> CSS3 高级属性</h1> <h2 id="_01-linear-gradient-线性渐变"><a href="#_01-linear-gradient-线性渐变" class="header-anchor">#</a> 01.linear-gradient 线性渐变</h2> <p>linear-gradient() 函数用于创建一个表示两种或多种颜色线性渐变的图片</p> <ul><li>background: linear-gradient(color-stop1, color-stop2, ...)</li> <li>background: linear-gradient(direction, color-stop1, color-stop2, ...)</li> <li>background: linear-gradient(angle, color-stop1, color-stop2, ...)</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">div</span> <span class="token punctuation">{</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.box1</span><span class="token punctuation">{</span>
+    <span class="token comment">/* red 上 - green 下  from to */</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>red 30%<span class="token punctuation">,</span>green 50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.box2</span><span class="token punctuation">{</span>
+    <span class="token comment">/* 右  red  到  左 green  */</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to left<span class="token punctuation">,</span>red<span class="token punctuation">,</span>green<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.box3</span><span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to left top<span class="token punctuation">,</span>red<span class="token punctuation">,</span>green<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.box4</span><span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>90deg<span class="token punctuation">,</span>red<span class="token punctuation">,</span>green<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 颜色A - B 渐变 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 颜色A - B 渐变(带一个方位) --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 颜色A - B 渐变(带多个方位) --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 颜色A - B 渐变(带角度) --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box4<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="radial-gradient-径向渐变"><a href="#radial-gradient-径向渐变" class="header-anchor">#</a> radial-gradient 径向渐变</h3> <p>radial-gradient() 函数创建了一个图片，其由一个从原点辐射开的在两个或者多个颜色之前的渐变组成</p> <ul><li>background: radial-gradient(#e66465, #9198e5)</li> <li>background: radial-gradient(closest-side, #3f87a6, #ebf8e1, #f69d3c)</li> <li>background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%)</li> <li>background: radial-gradient(ellipse at top, #e66465, transparent),
+radial-gradient(ellipse at bottom, #4d9f0c, transparent)</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">div</span> <span class="token punctuation">{</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.box1</span><span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>red<span class="token punctuation">,</span>green<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.box2</span><span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>closest-side<span class="token punctuation">,</span>green<span class="token punctuation">,</span>blue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- 颜色A - B 渐变 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 颜色A - B 渐变(渐变的边缘形状与容器距离渐变中心点最近的一边相切) --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 颜色A - B 渐变(圆形（渐变的形状是一个半径不变的正圆）) --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 颜色A - B 渐变(椭圆形（轴对称椭圆）) --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box4<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="_04-background-size-背景尺寸"><a href="#_04-background-size-背景尺寸" class="header-anchor">#</a> 04. background-size 背景尺寸</h3> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token comment">/* 背景八大  -  css3 */</span>
+  <span class="token selector">div</span> <span class="token punctuation">{</span>
+    <span class="token property">float</span><span class="token punctuation">:</span>left<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span>20px<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span>50px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span>50px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/* px  %  cover contain auto 
+  cover - 宽度 + 高度 - 50 * 50   裁剪
+  contain -  宽度 / 宽度  - 留白
+
+  容器比例   =  图片素材比例   雪碧图:宽度 高度
+  rem + px 
+
+  */</span>
+  <span class="token selector">.box1</span><span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span>#000 <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>images/icon-wechat.png<span class="token punctuation">)</span></span> no-repeat center<span class="token punctuation">;</span>
+    <span class="token property">background-size</span><span class="token punctuation">:</span> contain<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.box2</span><span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span>#000 <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>images/icon-rp.png<span class="token punctuation">)</span></span> no-repeat center<span class="token punctuation">;</span>
+    <span class="token property">background-size</span><span class="token punctuation">:</span> contain<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.box3</span><span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span>#000 <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>images/icon-credit.png<span class="token punctuation">)</span></span> no-repeat center<span class="token punctuation">;</span>
+    <span class="token property">background-size</span><span class="token punctuation">:</span> contain<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box4<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box5<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id=""><a href="#" class="header-anchor">#</a></h3> <h3 id="-2"><a href="#-2" class="header-anchor">#</a></h3></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/13/2021, 3:57:39 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/yg-notes/css/chapter1/" class="prev router-link-active">
+        CSS 常见技巧
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/yg-notes/assets/js/app.93f9341c.js" defer></script><script src="/yg-notes/assets/js/2.ef5320bc.js" defer></script><script src="/yg-notes/assets/js/9.b5b7ab43.js" defer></script>
+  </body>
+</html>
