@@ -10,7 +10,7 @@ module.exports = {
     nav: [
       { text: 'JavaScript', link: '/jsbase/chapter1/' },
       {text: 'CSS', link: '/css/chapter1/'},
-	  {text: 'Compiler', link: '/compiler/chapter1/'}
+	    {text: 'Compiler', link: '/compiler/chapter1/'}
     ],
     sidebar: {
       '/jsbase/': [
@@ -34,8 +34,10 @@ module.exports = {
         {
           title: 'CSS 常用技巧',
           collapsable: false,
+          sidebarDepth: 2,
           children: [
-            'chapter1/'
+            'chapter1/',
+            'chapter1/CSS3GaoJie'
           ]
         }
       ],
