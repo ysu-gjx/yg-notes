@@ -39,6 +39,15 @@ module.exports = {
             'chapter1/',
             'chapter1/CSS3GaoJie'
           ]
+        },
+        {
+          title: 'CSS 选择器',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            'chapter2/',
+            'chapter2/NAME'
+          ]
         }
       ],
 	  '/compiler/': [
