@@ -48,6 +48,13 @@ module.exports = {
             'chapter2/',
             'chapter2/NAME'
           ]
+        },
+        {
+          title: '变量和预处理器',
+          collapsable: false,
+          children: [
+            'chapter3/',
+          ]
         }
       ],
 	  '/compiler/': [

@@ -96,7 +96,83 @@ ul.shopping-list li .highlight:nth-of-type(odd) {color: blue;}
 
   在名称前面加上一个或多个小写字母作为前缀，例如：head_navigation、red_navMenuButton
 
-- 
+- BEM 命名法
+  - BEM：块(block)、元素(element)、修饰符(modifier)
+  - block 代表了更高级别的抽象或组件
+  - block__element 代表.block 的后代，用于形成一个完整的 .block 的整体
+  - block--modifier 代表 .block 的不同状态或不同版本，用于修饰
+
+页面模块的常用命名（也可以互相结合：submenu/mainnav/subnav/leftsidebar/topnav/dropmenu/...）
+
+<table>
+  <tr>
+    <td>头：header</td>
+    <td>导航：nav</td>
+    <td>菜单：menu</td>
+    <td>友情链接：friendlink</td>
+  </tr>
+  <tr>
+    <td>页面外围包裹：wrapper</td>
+    <td>子导航：subnav</td>
+    <td>子菜单：submenu</td>
+    <td>下载：download</td>
+  </tr>
+  <tr>
+    <td>页面主题：main</td>
+    <td>广告：banner</td>
+    <td>侧栏：sidebar</td>
+    <td>小技巧：tips</td>
+  </tr>
+  <tr>
+    <td>内容：content</td>
+    <td>标志：logo</td>
+    <td>栏目：column</td>
+    <td>滚动：scroll</td>
+  </tr>
+  <tr>
+    <td>页脚：footer</td>
+    <td>搜索：search</td>
+    <td>热点：hot</td>
+    <td>上一个：prev</td>
+  </tr>
+  <tr>
+    <td>版权：copyright</td>
+    <td>登录条：loginbar</td>
+    <td>新闻：news</td>
+    <td>下一个：next</td>
+  </tr>
+  <tr>
+    <td>标签页：tab</td>
+    <td>列表：list</td>
+    <td>文本：text</td>
+    <td>标题：title</td>
+  </tr>
+  <tr>
+    <td>加入：joinus</td>
+    <td>指南：guide</td>
+    <td>服务：service</td>
+    <td>状态：status</td>
+  </tr>
+  <tr>
+    <td>投票：vote</td>
+    <td>注册：register</td>
+    <td>摘要/概要：summary</td>
+    <td>合作伙伴：partner</td>
+  </tr>
+  <tr>
+    <td>左中右：left、center、right</td>
+    <td>图标：icon</td>
+    <td>注释：note</td>
+    <td>商标：brand/label</td>
+  </tr>
+  <tr>
+    <td>面包屑：breadcrumb</td>
+    <td>更多：extended/more</td>
+    <td>线：line</td>
+    <td>链接：link</td>
+  </tr>
+</table>
+
 
 ```html
 <!-- 
