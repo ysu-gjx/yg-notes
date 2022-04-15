@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vite中接入 css | JavaScript 基础知识</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="对 Javascript 学习的记录总结">
+    
+    <link rel="preload" href="/yg-notes/assets/css/0.styles.1df5dabc.css" as="style"><link rel="preload" href="/yg-notes/assets/js/app.9f4c51b3.js" as="script"><link rel="preload" href="/yg-notes/assets/js/2.7fcefaab.js" as="script"><link rel="preload" href="/yg-notes/assets/js/22.8bd5d36b.js" as="script"><link rel="prefetch" href="/yg-notes/assets/js/10.5d147f55.js"><link rel="prefetch" href="/yg-notes/assets/js/11.25a1b7d1.js"><link rel="prefetch" href="/yg-notes/assets/js/12.1480d4b2.js"><link rel="prefetch" href="/yg-notes/assets/js/13.f6597301.js"><link rel="prefetch" href="/yg-notes/assets/js/14.7d724b29.js"><link rel="prefetch" href="/yg-notes/assets/js/15.c1050884.js"><link rel="prefetch" href="/yg-notes/assets/js/16.e23ab3c7.js"><link rel="prefetch" href="/yg-notes/assets/js/17.f25dc830.js"><link rel="prefetch" href="/yg-notes/assets/js/18.28d8efea.js"><link rel="prefetch" href="/yg-notes/assets/js/19.6e3ee9bf.js"><link rel="prefetch" href="/yg-notes/assets/js/20.beae406b.js"><link rel="prefetch" href="/yg-notes/assets/js/21.0c619a97.js"><link rel="prefetch" href="/yg-notes/assets/js/23.60c6f167.js"><link rel="prefetch" href="/yg-notes/assets/js/3.2d6fd0ee.js"><link rel="prefetch" href="/yg-notes/assets/js/4.77d3d071.js"><link rel="prefetch" href="/yg-notes/assets/js/5.89eafe95.js"><link rel="prefetch" href="/yg-notes/assets/js/6.0a121ed3.js"><link rel="prefetch" href="/yg-notes/assets/js/7.484f9988.js"><link rel="prefetch" href="/yg-notes/assets/js/8.89b2441f.js"><link rel="prefetch" href="/yg-notes/assets/js/9.244030ca.js">
+    <link rel="stylesheet" href="/yg-notes/assets/css/0.styles.1df5dabc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/yg-notes/" class="home-link router-link-active"><!----> <span class="site-name">JavaScript 基础知识</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/yg-notes/jsbase/chapter1/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/yg-notes/css/chapter1/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/yg-notes/compiler/chapter1/" class="nav-link">
+  Compiler
+</a></div><div class="nav-item"><a href="/yg-notes/vite/chapter1/" class="nav-link">
+  vite小册
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/yg-notes/jsbase/chapter1/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/yg-notes/css/chapter1/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/yg-notes/compiler/chapter1/" class="nav-link">
+  Compiler
+</a></div><div class="nav-item"><a href="/yg-notes/vite/chapter1/" class="nav-link">
+  vite小册
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vite 小册</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/yg-notes/vite/chapter1/" class="sidebar-link">module standard</a></li><li><a href="/yg-notes/vite/chapter1/quick-start.html" class="sidebar-link">quick-start</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>vite-project-framework</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/yg-notes/vite/chapter2/" aria-current="page" class="active sidebar-link">vite中接入 css</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/#样式方案的意义" class="sidebar-link">样式方案的意义</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/#css-预处理器" class="sidebar-link">CSS 预处理器</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/#css-modules" class="sidebar-link">CSS Modules</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/#postcss" class="sidebar-link">PostCSS</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/#css-in-js" class="sidebar-link">CSS In JS</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/#css-原子化框架" class="sidebar-link">CSS 原子化框架</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/#_1-windi-css-接入" class="sidebar-link">1. Windi CSS 接入</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/#_2-tailwind-css" class="sidebar-link">2. Tailwind CSS</a></li></ul></li></ul></li><li><a href="/yg-notes/vite/chapter2/lint.html" class="sidebar-link">代码规范：利用lint工具</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vite中接入-css"><a href="#vite中接入-css" class="header-anchor">#</a> vite中接入 css</h1> <p>在最原始的开发阶段大家都是手写原生的 CSS，但原生 CSS 存在着诸多问题。</p> <h2 id="样式方案的意义"><a href="#样式方案的意义" class="header-anchor">#</a> 样式方案的意义</h2> <ol><li><strong>开发体验</strong>欠佳。比如原生 CSS 不支持选择器的嵌套:</li></ol> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">// 选择器只能平铺，不能嵌套
+.container .header .nav .title .text</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.container .header .nav .box</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid grey<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol start="2"><li><strong>样式污染</strong>问题。如果出现同样的类名，很容易造成不同的样式互相覆盖和污染。</li></ol> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">// a.css
+.container</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// b.css
+// 很有可能覆盖 a.css 的样式！
+.container</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol start="3"><li><strong>浏览器兼容</strong>问题。为了兼容不同的浏览器，我们需要对一些属性(如transition)加上不同的浏览器前缀，比如 <code>-webkit-、-moz-、-ms-、-o-</code>，意味着开发者要针对同一个样式属性写很多的冗余代码。</li> <li><strong>打包后的代码体积</strong>问题。如果不用任何的 CSS 工程化方案，所有的 CSS 代码都将打包到产物中，即使有部分样式并没有在代码中使用，导致产物体积过大。</li></ol> <h2 id="css-预处理器"><a href="#css-预处理器" class="header-anchor">#</a> CSS 预处理器</h2> <p>Vite 本身对 CSS 各种预处理器语言(Sass/Scss、Less和Stylus)做了内置支持。也就是说，即使你不经过任何的配置也可以直接使用各种 CSS 预处理器。我们以 Sass/Scss 为例，来具体感受一下 Vite 的零配置给我们带来的便利。</p> <p>由于 Vite 底层会调用 CSS 预处理器的官方库进行编译，而 Vite 为了实现按需加载，并没有内置这些工具库，而是让用户根据需要安装。因此，我们首先安装 Sass 的官方库，安装命令如下:</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">pnpm</span> i sass -D
+</code></pre></div><p>然后，在上一节初始化后的项目中新建 <code>src/components/Header</code> 目录，并且分别新建<code>index.tsx</code> 和 <code>index.scss</code>文件，代码如下:</p> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token comment">// index.tsx</span>
+<span class="token keyword">import</span> <span class="token string">'./index.scss'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>header<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">This is Header</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// index.scss</span>
+<span class="token punctuation">.</span>header <span class="token punctuation">{</span>
+  color<span class="token operator">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样就完成了一个最简单的 demo 组件。接着我们在 <code>App.tsx</code> 应用这个组件:</p> <div class="language-tsx extra-class"><pre class="language-tsx"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Header <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./components/Header&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Header</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span>
+</code></pre></div><p>现在你可以执行<code>pnpm run dev</code>，然后到浏览器上查看效果:</p> <img src="/yg-notes/assets/vite/3.webp"> <p>内容比较简单，如果页面出现红色的文字部分，就说明 <code>scss</code> 文件中的样式已经成功生效。好，现在我们封装一个全局的主题色，新建<code>src/variable.scss</code>文件，内容如下:</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token comment">// variable.scss</span>
+<span class="token property"><span class="token variable">$theme-color</span></span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+</code></pre></div><p>然后，我们在原来 Header 组件的样式中应用这个变量:</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@import</span> <span class="token string">&quot;../../variable&quot;</span><span class="token punctuation">;</span>
+
+<span class="token selector">.header </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">$theme-color</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>回到浏览器访问页面，可以看到样式依然生效。你可能会注意到，每次要使用<code>$theme-color</code>属性的时候我们都需要手动引入<code>variable.scss</code>文件，那有没有自动引入的方案呢？这就需要在 Vite 中进行一些自定义配置了，在配置文件中增加如下的内容:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> normalizePath <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span><span class="token punctuation">;</span>
+<span class="token comment">// 如果类型报错，需要安装 @types/node: pnpm i @types/node -D</span>
+<span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">'path'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 全局 scss 文件的路径</span>
+<span class="token comment">// 用 normalizePath 解决 window 下的路径问题</span>
+<span class="token keyword">const</span> variablePath <span class="token operator">=</span> <span class="token function">normalizePath</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'./src/variable.scss'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// css 相关的配置</span>
+  css<span class="token operator">:</span> <span class="token punctuation">{</span>
+    preprocessorOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+      scss<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// additionalData 的内容会在每个 scss 文件的开头自动注入</span>
+        additionalData<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">@import &quot;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>variablePath<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&quot;;</span><span class="token template-punctuation string">`</span></span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>现在你可以直接在文件中使用全局文件的变量，相当于之前手动引入的方式显然方便了许多:</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">.header </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">$theme-color</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>同样的，你可以对 <code>less</code> 和 <code>stylus</code> 进行一些能力的配置，如果有需要你可以去下面的官方文档中查阅更多的配置项:</p> <ul><li><a href="https://sass-lang.com/documentation/js-api/modules#render" target="_blank" rel="noopener noreferrer">sass<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://lesscss.org/usage/#less-options" target="_blank" rel="noopener noreferrer">less<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://stylus-lang.com/docs/js.html" target="_blank" rel="noopener noreferrer">stylus<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="css-modules"><a href="#css-modules" class="header-anchor">#</a> CSS Modules</h2> <p>CSS Modules 在 Vite 也是一个开箱即用的能力，Vite 会对后缀带有.module的样式文件自动应用 CSS Modules。接下来我们通过一个简单的例子来使用这个功能。</p> <p>首先，将 <code>Header</code> 组件中的<code>index.scss</code>更名为<code>index.module.scss</code>，然后稍微改动一下<code>index.tsx</code>的内容，如下:</p> <div class="language-tsx extra-class"><pre class="language-tsx"><code><span class="token keyword">import</span> styles <span class="token keyword">from</span> <span class="token string">'./index.module.scss'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>header<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">This is Header</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>现在打开浏览器，可以看见 p 标签的类名已经被处理成了哈希值的形式:</p> <img src="/yg-notes/assets/vite/4.webp"> <p>说明现在 <code>CSS Modules</code> 已经正式生效了！同样的，你也可以在配置文件中的<code>css.modules</code>选项来配置 <code>CSS Modules</code> 的功能，比如下面这个例子:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  css<span class="token operator">:</span> <span class="token punctuation">{</span>
+    modules<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 一般我们可以通过 generateScopedName 属性来对生成的类名进行自定义</span>
+      <span class="token comment">// 其中，name 表示当前文件名，local 表示类名</span>
+      generateScopedName<span class="token operator">:</span> <span class="token string">&quot;[name]__[local]___[hash:base64:5]&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    preprocessorOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 省略预处理器配置</span>
+    <span class="token punctuation">}</span>
+
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>再次访问页面，我们可以发现刚才的类名已经变成了我们自定义的形式:</p> <img src="/yg-notes/assets/vite/5.webp"> <p>这是一个 CSS Modules 中很常见的配置，对开发时的调试非常有用。其它的一些配置项不太常用，大家可以去这个<a href="https://github.com/madyankin/postcss-modules" target="_blank" rel="noopener noreferrer">地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>进行查阅。</p> <h2 id="postcss"><a href="#postcss" class="header-anchor">#</a> PostCSS</h2> <p>一般你可以通过 <code>postcss.config.js</code> 来配置 postcss ，不过在 Vite 配置文件中已经提供了 PostCSS 的配置入口，我们可以直接在 Vite 配置文件中进行操作。</p> <p>首先，我们来安装一个常用的 PostCSS 插件——<code>autoprefixer</code>:</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">pnpm</span> i autoprefixer -D
+</code></pre></div><p>这个插件主要用来自动为不同的目标浏览器添加样式前缀，解决的是浏览器兼容性的问题。接下来让我们在 Vite 中接入这个插件:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts 增加如下的配置</span>
+<span class="token keyword">import</span> autoprefixer <span class="token keyword">from</span> <span class="token string">'autoprefixer'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  css<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 进行 PostCSS 配置</span>
+    postcss<span class="token operator">:</span> <span class="token punctuation">{</span>
+      plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token function">autoprefixer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          <span class="token comment">// 指定目标浏览器</span>
+          overrideBrowserslist<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'Chrome &gt; 40'</span><span class="token punctuation">,</span> <span class="token string">'ff &gt; 31'</span><span class="token punctuation">,</span> <span class="token string">'ie 11'</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>配置完成后，我们回到 Header 组件的样式文件中添加一个新的 CSS 属性:</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">.header </span><span class="token punctuation">{</span>
+  &lt;!-- 前面的样式省略 --&gt;
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> dashed<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>你可以执行<code>pnpm run build</code>命令进行打包，可以看到产物中自动补上了浏览器前缀，如:</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">._header_kcvt0_1</span> <span class="token punctuation">{</span>
+  &lt;!-- 前面的样式省略 --&gt;
+  <span class="token property">-webkit-text-decoration</span><span class="token punctuation">:</span> dashed<span class="token punctuation">;</span>
+  <span class="token property">-moz-text-decoration</span><span class="token punctuation">:</span> dashed<span class="token punctuation">;</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> dashed<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>由于有 <code>CSS</code> 代码的 <code>AST</code> (抽象语法树)解析能力，<code>PostCSS</code> 可以做的事情非常多，甚至能实现 <code>CSS</code> 预处理器语法和 <code>CSS Modules</code>，社区当中也有不少的 <code>PostCSS</code> 插件，除了刚刚提到的<code>autoprefixer</code>插件，常见的插件还包括:</p> <ul><li><a href="https://github.com/cuth/postcss-pxtorem" target="_blank" rel="noopener noreferrer">postcss-pxtorem<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>： 用来将 px 转换为 rem 单位，在适配移动端的场景下很常用。</li> <li><a href="https://github.com/csstools/postcss-preset-env" target="_blank" rel="noopener noreferrer">postcss-preset-env<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>: 通过它，你可以编写最新的 CSS 语法，不用担心兼容性问题。</li> <li><a href="https://github.com/cssnano/cssnano" target="_blank" rel="noopener noreferrer">cssnano<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>: 主要用来压缩 CSS 代码，跟常规的代码压缩工具不一样，它能做得更加智能，比如提取一些公共样式进行复用、缩短一些常见的属性值等等。</li></ul> <p>关于 PostCSS 插件，这里还给大家推荐一个站点：<a href="/yg-notes/vite/chapter2/www.postcss.parts/">www.postcss.parts/</a> ，你可以去里面探索更多的内容。</p> <h2 id="css-in-js"><a href="#css-in-js" class="header-anchor">#</a> CSS In JS</h2> <p>社区中有两款主流的CSS In JS 方案: <code>styled-components</code>和<code>emotion</code>。</p> <p>对于 CSS In JS 方案，在构建侧我们需要考虑**选择器命名问题、DCE(Dead Code Elimination 即无用代码删除)、代码压缩、生成 SourceMap、服务端渲染(SSR)**等问题，而<code>styled-components</code>和<code>emotion</code>已经提供了对应的 babel 插件来解决这些问题，我们在 Vite 中要做的就是集成这些 babel 插件。</p> <p>具体来说，上述的两种主流 CSS in JS 方案在 Vite 中集成方式如下:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> react <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-react'</span>
+
+<span class="token comment">// https://vitejs.dev/config/</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token function">react</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      babel<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 加入 babel 插件</span>
+        <span class="token comment">// 以下插件包都需要提前安装</span>
+        <span class="token comment">// 当然，通过这个配置你也可以添加其它的 Babel 插件</span>
+        plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token comment">// 适配 styled-component</span>
+          <span class="token string">&quot;babel-plugin-styled-components&quot;</span>
+          <span class="token comment">// 适配 emotion</span>
+          <span class="token string">&quot;@emotion/babel-plugin&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// 注意: 对于 emotion，需要单独加上这个配置</span>
+      <span class="token comment">// 通过 `@emotion/react` 包编译 emotion 中的特殊 jsx 语法</span>
+      jsxImportSource<span class="token operator">:</span> <span class="token string">&quot;@emotion/react&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="css-原子化框架"><a href="#css-原子化框架" class="header-anchor">#</a> CSS 原子化框架</h2> <p>在目前的社区当中，CSS 原子化框架主要包括<code>Tailwind CSS</code> 和 <code>Windi CSS</code>。<code>Windi CSS</code> 作为前者的替换方案，实现了按需生成 <code>CSS</code> 类名的功能，开发环境下的 <code>CSS</code> 产物体积大大减少，速度上比<code>Tailwind CSS v2</code>快 20~100 倍！当然，<code>Tailwind CSS</code> 在 v3 版本也引入 <a href="https://v2.tailwindcss.com/docs/just-in-time-mode" target="_blank" rel="noopener noreferrer">JIT(即时编译)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 的功能，解决了开发环境下 CSS 产物体积庞大的问题。接下来我们将这两个方案分别接入到 Vite 中，在实际的项目中你只需要使用其中一种就可以了。我个人比较喜欢 <code>Windi CSS</code> 本身的<code>attributify</code>、<code>shortcuts</code>等独有的特性，因此首先从 <code>windicss</code> 开始说起。</p> <h3 id="_1-windi-css-接入"><a href="#_1-windi-css-接入" class="header-anchor">#</a> 1. Windi CSS 接入</h3> <p>首先安装 windicss 及对应的 Vite 插件:</p> <div class="language- extra-class"><pre class="language-text"><code>pnpm i windicss vite-plugin-windicss -D
+</code></pre></div><p>随后我们在配置文件中来使用它:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts</span>
+<span class="token keyword">import</span> windi <span class="token keyword">from</span> <span class="token string">&quot;vite-plugin-windicss&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 省略其它插件</span>
+    <span class="token function">windi</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>接着要注意在<code>src/main.tsx</code>中引入一个必需的 import 语句:</p> <div class="language-tsx extra-class"><pre class="language-tsx"><code><span class="token comment">// main.tsx</span>
+<span class="token comment">// 用来注入 Windi CSS 所需的样式，一定要加上！</span>
+<span class="token keyword">import</span> <span class="token string">&quot;virtual:windi.css&quot;</span><span class="token punctuation">;</span>
+</code></pre></div><p>这样我们就完成了 <code>Windi CSS</code> 在 Vite 中的接入，接下来我们在 Header 组件中来测试，组件代码修改如下:</p> <div class="language-tsx extra-class"><pre class="language-tsx"><code><span class="token comment">// src/components/Header/index.tsx</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> devDependencies <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../../../package.json&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>p-20px text-center<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>font-bold text-2xl mb-2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        vite version: </span><span class="token punctuation">{</span>devDependencies<span class="token punctuation">.</span>vite<span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>启动项目可以看到如下的效果，说明样式已经正常生效:</p> <img src="/yg-notes/assets/vite/6.webp"> <p>除了本身的原子化 CSS 能力，Windi CSS 还有一些非常好用的高级功能，在此我给大家推荐自己常用的两个能力: <strong>attributify</strong> 和 <strong>shortcuts</strong>。</p> <p>要开启这两个功能，我们需要在项目根目录新建<code>windi.config.ts</code>，配置如下:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vite-plugin-windicss&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// 开启 attributify</span>
+  attributify<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>首先我们来看看<code>attributify</code>，翻译过来就是属性化，也就是说我们可以用 <code>props</code> 的方式去定义样式属性，如下所示:</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> 
+  <span class="token attr-name">bg</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600<span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>sm white<span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">font</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>mono light<span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">p</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>y-2 x-4<span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>2 rounded blue-200<span class="token punctuation">&quot;</span></span>
+<span class="token punctuation">&gt;</span></span>
+  Button
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>这样的开发方式不仅省去了繁琐的 className 内容，还加强了语义化，让代码更易维护，大大提升了开发体验。</p> <p>不过使用<code>attributify</code>的时候需要注意类型问题，你需要添加<code>types/shim.d.ts</code>来增加类型声明，以防类型报错:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> AttributifyAttributes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'windicss/types/jsx'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">declare</span> <span class="token keyword">module</span> <span class="token string">'react'</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span> <span class="token class-name">HTMLAttributes<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> AttributifyAttributes<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>shortcuts</code> 用来封装一系列的原子化能力，尤其是一些常见的类名集合，我们在 <code>windi.config.ts</code>来配置它:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">//windi.config.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vite-plugin-windicss&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  attributify<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  shortcuts<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;flex-c&quot;</span><span class="token operator">:</span> <span class="token string">&quot;flex justify-center items-center&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>比如这里封装了flex-c的类名，接下来我们可以在业务代码直接使用这个类名:</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>flex-c<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- 等同于下面这段 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>flex justify-center items-center<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="_2-tailwind-css"><a href="#_2-tailwind-css" class="header-anchor">#</a> 2. Tailwind CSS</h3> <p>接下来我们来接入 Tailwind CSS 方案，为了避免和之前的 Windi CSS 混淆，这里我建议你新起一个 Vite 项目。</p> <div class="custom-block tip"><p class="custom-block-title">git</p> <p>小册中对应的 GitHub <a href="https://github.com/sanyuan0704/juejin-book-vite/tree/main/other/tailwind-demo" target="_blank" rel="noopener noreferrer">代码地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p></div> <p>首先安装 <code>tailwindcss</code> 及其必要的依赖:</p> <div class="language- extra-class"><pre class="language-text"><code>pnpm install -D tailwindcss postcss autoprefixer
+</code></pre></div><p>然后新建两个配置文件<code>tailwind.config.js</code>和<code>postcss.config.js</code>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// tailwind.config.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;./index.html&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;./src/**/*.{vue,js,ts,jsx,tsx}&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  theme<span class="token operator">:</span> <span class="token punctuation">{</span>
+    extend<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// postcss.config.js</span>
+<span class="token comment">// 从中你可以看到，Tailwind CSS 的编译能力是通过 PostCSS 插件实现的</span>
+<span class="token comment">// 而 Vite 本身内置了 PostCSS，因此可以通过 PostCSS 配置接入 Tailwind CSS </span>
+<span class="token comment">// 注意: Vite 配置文件中如果有 PostCSS 配置的情况下会覆盖掉 post.config.js 的内容!</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">{</span>
+    tailwindcss<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    autoprefixer<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>接着在项目的入口 CSS 中引入必要的样板代码:</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token atrule"><span class="token rule">@tailwind</span> base<span class="token punctuation">;</span></span>
+<span class="token atrule"><span class="token rule">@tailwind</span> components<span class="token punctuation">;</span></span>
+<span class="token atrule"><span class="token rule">@tailwind</span> utilities<span class="token punctuation">;</span></span>
+</code></pre></div><p>现在，你就可以在项目中安心地使用 Tailwind 样式了，如下所示:</p> <div class="language-tsx extra-class"><pre class="language-tsx"><code><span class="token comment">// App.tsx</span>
+
+<span class="token keyword">import</span> logo <span class="token keyword">from</span> <span class="token string">&quot;./logo.svg&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;./App.css&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>App-header<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>logo<span class="token punctuation">}</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>w-20<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>logo<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>bg-red-400<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Hello Vite + React!</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/15/2022, 10:18:57 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/yg-notes/vite/chapter1/quick-start.html" class="prev">
+        quick-start
+      </a></span> <span class="next"><a href="/yg-notes/vite/chapter2/lint.html">
+        代码规范：利用lint工具
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/yg-notes/assets/js/app.9f4c51b3.js" defer></script><script src="/yg-notes/assets/js/2.7fcefaab.js" defer></script><script src="/yg-notes/assets/js/22.8bd5d36b.js" defer></script>
+  </body>
+</html>

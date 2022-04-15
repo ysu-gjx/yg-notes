@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>module standard | JavaScript 基础知识</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="对 Javascript 学习的记录总结">
+    
+    <link rel="preload" href="/yg-notes/assets/css/0.styles.1df5dabc.css" as="style"><link rel="preload" href="/yg-notes/assets/js/app.9f4c51b3.js" as="script"><link rel="preload" href="/yg-notes/assets/js/2.7fcefaab.js" as="script"><link rel="preload" href="/yg-notes/assets/js/20.beae406b.js" as="script"><link rel="prefetch" href="/yg-notes/assets/js/10.5d147f55.js"><link rel="prefetch" href="/yg-notes/assets/js/11.25a1b7d1.js"><link rel="prefetch" href="/yg-notes/assets/js/12.1480d4b2.js"><link rel="prefetch" href="/yg-notes/assets/js/13.f6597301.js"><link rel="prefetch" href="/yg-notes/assets/js/14.7d724b29.js"><link rel="prefetch" href="/yg-notes/assets/js/15.c1050884.js"><link rel="prefetch" href="/yg-notes/assets/js/16.e23ab3c7.js"><link rel="prefetch" href="/yg-notes/assets/js/17.f25dc830.js"><link rel="prefetch" href="/yg-notes/assets/js/18.28d8efea.js"><link rel="prefetch" href="/yg-notes/assets/js/19.6e3ee9bf.js"><link rel="prefetch" href="/yg-notes/assets/js/21.0c619a97.js"><link rel="prefetch" href="/yg-notes/assets/js/22.8bd5d36b.js"><link rel="prefetch" href="/yg-notes/assets/js/23.60c6f167.js"><link rel="prefetch" href="/yg-notes/assets/js/3.2d6fd0ee.js"><link rel="prefetch" href="/yg-notes/assets/js/4.77d3d071.js"><link rel="prefetch" href="/yg-notes/assets/js/5.89eafe95.js"><link rel="prefetch" href="/yg-notes/assets/js/6.0a121ed3.js"><link rel="prefetch" href="/yg-notes/assets/js/7.484f9988.js"><link rel="prefetch" href="/yg-notes/assets/js/8.89b2441f.js"><link rel="prefetch" href="/yg-notes/assets/js/9.244030ca.js">
+    <link rel="stylesheet" href="/yg-notes/assets/css/0.styles.1df5dabc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/yg-notes/" class="home-link router-link-active"><!----> <span class="site-name">JavaScript 基础知识</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/yg-notes/jsbase/chapter1/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/yg-notes/css/chapter1/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/yg-notes/compiler/chapter1/" class="nav-link">
+  Compiler
+</a></div><div class="nav-item"><a href="/yg-notes/vite/chapter1/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  vite小册
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/yg-notes/jsbase/chapter1/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/yg-notes/css/chapter1/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/yg-notes/compiler/chapter1/" class="nav-link">
+  Compiler
+</a></div><div class="nav-item"><a href="/yg-notes/vite/chapter1/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  vite小册
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>vite 小册</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/yg-notes/vite/chapter1/" aria-current="page" class="active sidebar-link">module standard</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter1/#file" class="sidebar-link">file</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter1/#namespace" class="sidebar-link">namespace</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter1/#iife" class="sidebar-link">iife</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter1/#amd" class="sidebar-link">amd</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter1/#commonjs" class="sidebar-link">commonjs</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter1/#es6-module" class="sidebar-link">ES6 Module</a></li></ul></li><li><a href="/yg-notes/vite/chapter1/quick-start.html" class="sidebar-link">quick-start</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vite-project-framework</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/yg-notes/vite/chapter2/" class="sidebar-link">vite中接入 css</a></li><li><a href="/yg-notes/vite/chapter2/lint.html" class="sidebar-link">代码规范：利用lint工具</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="module-standard"><a href="#module-standard" class="header-anchor">#</a> module standard</h1> <h2 id="file"><a href="#file" class="header-anchor">#</a> file</h2> <h2 id="namespace"><a href="#namespace" class="header-anchor">#</a> namespace</h2> <h2 id="iife"><a href="#iife" class="header-anchor">#</a> iife</h2> <h2 id="amd"><a href="#amd" class="header-anchor">#</a> amd</h2> <p><code>AMD</code> 全称为 <code>Asynchronous Module Definition</code>，即异步模块定义规范。模块根据这个规范，在浏览器环境中会被异步加载，而不会像 CommonJS 规范进行同步加载，也就不会产生同步请求导致的浏览器解析过程阻塞的问题了</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// main.js</span>
+<span class="token function">define</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&quot;./print&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">printModule</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  printModule<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot;main&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// print.js</span>
+<span class="token function">define</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">print</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;print &quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="commonjs"><a href="#commonjs" class="header-anchor">#</a> commonjs</h2> <h2 id="es6-module"><a href="#es6-module" class="header-anchor">#</a> ES6 Module</h2> <p><code>ES6 Module</code> 也被称作 <code>ES Module</code>(或 ESM)， 是由 ECMAScript 官方提出的模块化规范，作为一个官方提出的规范，<code>ES Module</code> 已经得到了现代浏览器的内置支持。在现代浏览器中，如果在 HTML 中加入含有<code>type=&quot;module&quot;</code>属性的 script 标签，那么浏览器会按照 <code>ES Module</code> 规范来进行依赖加载和模块解析，这也是 Vite 在开发阶段实现 no-bundle 的原因，由于模块加载的任务交给了浏览器，即使不打包也可以顺利运行模块代码</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/15/2022, 10:18:57 AM</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/yg-notes/vite/chapter1/quick-start.html">
+        quick-start
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/yg-notes/assets/js/app.9f4c51b3.js" defer></script><script src="/yg-notes/assets/js/2.7fcefaab.js" defer></script><script src="/yg-notes/assets/js/20.beae406b.js" defer></script>
+  </body>
+</html>

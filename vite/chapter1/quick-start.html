@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>quick-start | JavaScript 基础知识</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="对 Javascript 学习的记录总结">
+    
+    <link rel="preload" href="/yg-notes/assets/css/0.styles.1df5dabc.css" as="style"><link rel="preload" href="/yg-notes/assets/js/app.9f4c51b3.js" as="script"><link rel="preload" href="/yg-notes/assets/js/2.7fcefaab.js" as="script"><link rel="preload" href="/yg-notes/assets/js/21.0c619a97.js" as="script"><link rel="prefetch" href="/yg-notes/assets/js/10.5d147f55.js"><link rel="prefetch" href="/yg-notes/assets/js/11.25a1b7d1.js"><link rel="prefetch" href="/yg-notes/assets/js/12.1480d4b2.js"><link rel="prefetch" href="/yg-notes/assets/js/13.f6597301.js"><link rel="prefetch" href="/yg-notes/assets/js/14.7d724b29.js"><link rel="prefetch" href="/yg-notes/assets/js/15.c1050884.js"><link rel="prefetch" href="/yg-notes/assets/js/16.e23ab3c7.js"><link rel="prefetch" href="/yg-notes/assets/js/17.f25dc830.js"><link rel="prefetch" href="/yg-notes/assets/js/18.28d8efea.js"><link rel="prefetch" href="/yg-notes/assets/js/19.6e3ee9bf.js"><link rel="prefetch" href="/yg-notes/assets/js/20.beae406b.js"><link rel="prefetch" href="/yg-notes/assets/js/22.8bd5d36b.js"><link rel="prefetch" href="/yg-notes/assets/js/23.60c6f167.js"><link rel="prefetch" href="/yg-notes/assets/js/3.2d6fd0ee.js"><link rel="prefetch" href="/yg-notes/assets/js/4.77d3d071.js"><link rel="prefetch" href="/yg-notes/assets/js/5.89eafe95.js"><link rel="prefetch" href="/yg-notes/assets/js/6.0a121ed3.js"><link rel="prefetch" href="/yg-notes/assets/js/7.484f9988.js"><link rel="prefetch" href="/yg-notes/assets/js/8.89b2441f.js"><link rel="prefetch" href="/yg-notes/assets/js/9.244030ca.js">
+    <link rel="stylesheet" href="/yg-notes/assets/css/0.styles.1df5dabc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/yg-notes/" class="home-link router-link-active"><!----> <span class="site-name">JavaScript 基础知识</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/yg-notes/jsbase/chapter1/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/yg-notes/css/chapter1/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/yg-notes/compiler/chapter1/" class="nav-link">
+  Compiler
+</a></div><div class="nav-item"><a href="/yg-notes/vite/chapter1/" class="nav-link router-link-active">
+  vite小册
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/yg-notes/jsbase/chapter1/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/yg-notes/css/chapter1/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/yg-notes/compiler/chapter1/" class="nav-link">
+  Compiler
+</a></div><div class="nav-item"><a href="/yg-notes/vite/chapter1/" class="nav-link router-link-active">
+  vite小册
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>vite 小册</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/yg-notes/vite/chapter1/" aria-current="page" class="sidebar-link">module standard</a></li><li><a href="/yg-notes/vite/chapter1/quick-start.html" aria-current="page" class="active sidebar-link">quick-start</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter1/quick-start.html#环境搭建" class="sidebar-link">环境搭建</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter1/quick-start.html#项目初始化" class="sidebar-link">项目初始化</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter1/quick-start.html#项目入口加载" class="sidebar-link">项目入口加载</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter1/quick-start.html#初识配置文件" class="sidebar-link">初识配置文件</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter1/quick-start.html#生产环境构建" class="sidebar-link">生产环境构建</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vite-project-framework</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/yg-notes/vite/chapter2/" class="sidebar-link">vite中接入 css</a></li><li><a href="/yg-notes/vite/chapter2/lint.html" class="sidebar-link">代码规范：利用lint工具</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="quick-start"><a href="#quick-start" class="header-anchor">#</a> quick-start</h1> <h2 id="环境搭建"><a href="#环境搭建" class="header-anchor">#</a> 环境搭建</h2> <div class="language- extra-class"><pre class="language-text"><code>npm i -g pnpm
+</code></pre></div><p>设置镜像源</p> <div class="language- extra-class"><pre class="language-text"><code>pnpm config set registry https://registry.npmmirror.com/
+</code></pre></div><h2 id="项目初始化"><a href="#项目初始化" class="header-anchor">#</a> 项目初始化</h2> <div class="language- extra-class"><pre class="language-text"><code>pnpm create vite
+</code></pre></div><p>后续设置完1. 项目名称 2. 前端开发框架 3. 选择开发语言</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 进入项目目录</span>
+cd vite<span class="token operator">-</span>project
+<span class="token comment">// 安装依赖</span>
+pnpm install
+<span class="token comment">// 启动项目</span>
+pnpm run dev
+</code></pre></div><h2 id="项目入口加载"><a href="#项目入口加载" class="header-anchor">#</a> 项目入口加载</h2> <div class="language- extra-class"><pre class="language-text"><code>.
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+├── src
+│   ├── App.css
+│   ├── App.tsx
+│   ├── favicon.svg
+│   ├── index.css
+│   ├── logo.svg
+│   ├── main.tsx
+│   └── vite-env.d.ts
+├── tsconfig.json
+└── vite.config.ts
+</code></pre></div><p>值得注意的是，在项目根目录中有一个<code>index.html</code>文件，这个文件十分关键，因为 Vite 默认会把项目根目录下的<code>index.html</code>作为入口文件。也就是说，当你访问<code>http://localhost:3000</code>的时候，Vite 的 Dev Server 会自动返回这个 HTML 文件的内容。我们来看看这个 HTML 究竟写了什么:</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>icon<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>image/svg+xml<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/src/favicon.svg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Vite App<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>root<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>module<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/src/main.tsx<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>可以看到这个 <code>HTML</code> 文件的内容非常简洁，在 <code>body</code> 标签中除了 id 为 root 的根节点之外，还包含了一个声明了<code>type=&quot;module&quot;</code>的 script 标签:</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>module<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/src/main.tsx<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>由于现代浏览器原生支持了 ES 模块规范，因此原生的 ES 语法也可以直接放到浏览器中执行，只需要在 <code>script</code> 标签中声明 <code>type=&quot;module&quot;</code> 即可。比如上面的 <code>script</code> 标签就声明了 <code>type=&quot;module&quot;</code>，同时 src 指向了<code>/src/main.tsx</code>文件，此时相当于请求了<code>http://localhost:3000/src/main.tsx</code>这个资源，Vite 的 Dev Server 此时会接受到这个请求，然后读取对应的文件内容，进行一定的中间处理，最后将处理的结果返回给浏览器</p> <img src="/yg-notes/assets/vite/1.awebp"> <p>到这里可能你会诧异: 浏览器并不识别 tsx 语法，也无法直接 import css 文件，上面这段代码究竟是如何被浏览器正常执行的呢？</p> <p>这就归功了 Vite Dev Server 所做的“中间处理”了，也就是说，在读取到 <code>main.tsx</code>文件的内容之后，Vite 会对文件的内容进行编译，大家可以从 Chrome 的网络调试面板看到编译后的结果</p> <img src="/yg-notes/assets/vite/2.awebp"> <p>这里你只需要知道，Vite 会将项目的源代码编译成浏览器可以识别的代码，与此同时，一个 import 语句即代表了一个 HTTP 请求，如下面两个 import 语句:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token string">&quot;/src/index.css&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">&quot;/src/App.tsx&quot;</span><span class="token punctuation">;</span>
+</code></pre></div><p>需要注意的是，在 Vite 项目中，<strong>一个import 语句即代表一个 HTTP 请求</strong>。上述两个语句则分别代表了两个不同的请求，Vite Dev Server 会读取本地文件，返回浏览器可以解析的代码。当浏览器解析到新的 import 语句，又会发出新的请求，以此类推，直到所有的资源都加载完成。</p> <p>现在，你应该知道了 Vite 所倡导的 <code>no-bundle</code> 理念的真正含义: <strong>利用浏览器原生 ES 模块的支持，实现开发阶段的 Dev Server，进行模块的按需加载，而不是先整体打包再进行加载</strong>。相比 Webpack 这种必须打包再加载的传统构建模式，Vite 在开发阶段省略了繁琐且耗时的打包过程，这也是它为什么快的一个重要原因</p> <h2 id="初识配置文件"><a href="#初识配置文件" class="header-anchor">#</a> 初识配置文件</h2> <p>在使用 Vite 的过程，我们需要对 Vite 做一些配置，以满足日常开发的需要。你可以通过两种方式来对 Vite 进行配置，一是通过命令行参数，如 <code>vite --port=8888</code> ，二是通过配置文件，一般情况下，大多数的配置都通过配置文件的方式来声明。</p> <p>Vite 当中支持多种配置文件类型，包括<code>.js、.ts、.mjs</code>三种后缀的文件，实际项目中一般使用<code>vite.config.ts</code>作为配置文件，以脚手架项目中的配置为例，具体的配置代码如下:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> react <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-react'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">react</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>可以看到配置文件中默认在 plugins 数组中配置了官方的 react 插件，来提供 React 项目编译和热更新的功能。</p> <p>接下来，我们可以基于这个文件完成更加丰富的配置。之前我就遇到过这样一个需求: 页面的入口文件<code>index.html</code>并不在项目根目录下，而需要放到 src 目录下，如何在访问<code>localhost:3000</code>的时候让 Vite 自动返回 src 目录下的<code>index.html</code>呢？我们可以通过root参数配置项目根目录的位置:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token comment">// 引入 path 包注意两点:</span>
+<span class="token comment">// 1. 为避免类型报错，你需要通过 `pnpm i @types/node -D` 安装类型</span>
+<span class="token comment">// 2. tsconfig.node.json 中设置 `allowSyntheticDefaultImports: true`，以允许下面的 default 导入方式</span>
+<span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">'path'</span>
+<span class="token keyword">import</span> react <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-react'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// 手动指定项目根目录位置</span>
+  root<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">)</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">react</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>当手动指定root参数之后，Vite 会自动从这个路径下寻找index.html文件，也就是说当我直接访问 localhost:3000的时候，Vite 从src目录下读取入口文件，这样就成功实现了刚才的需求。</p> <h2 id="生产环境构建"><a href="#生产环境构建" class="header-anchor">#</a> 生产环境构建</h2> <p>有人说 <code>Vite</code> 因为其不打包的特性而不能上生产环境，其实这种观点是相当有误的。在开发阶段 Vite 通过 Dev Server 实现了不打包的特性，而在生产环境中，Vite 依然会基于 <code>Rollup</code> 进行打包，并采取一系列的打包优化手段</p> <p><code>package.json</code> 其中的<code>build</code>命令了，没错，这个命令就是 Vite 专门用来进行生产环境打包的。但可能你会有点疑惑，为什么在<code>vite build</code>命令执行之前要先执行<code>tsc</code>呢？</p> <p><code>tsc</code> 作为 TypeScript 的官方编译命令，可以用来编译 TypeScript 代码并进行类型检查，而这里的作用主要是用来做类型检查，我们可以从项目的<code>tsconfig.json</code>中注意到这样一个配置:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;compilerOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 省略其他配置</span>
+    <span class="token comment">// 1. noEmit 表示只做类型检查，而不会输出产物文件</span>
+    <span class="token comment">// 2. 这行配置与 tsc --noEmit 命令等效</span>
+    <span class="token string">&quot;noEmit&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>虽然 Vite 提供了开箱即用的 TypeScript 以及 JSX 的编译能力，但实际上底层并没有实现 TypeScript 的类型校验系统，因此需要借助 tsc 来完成类型校验(在 Vue 项目中使用 vue-tsc 这个工具来完成)，在打包前提早暴露出类型相关的问题，保证代码的健壮性。</p> <p>执行命令</p> <div class="language- extra-class"><pre class="language-text"><code>pnpm run build
+</code></pre></div><p>此时 Vite 已经生成了最终的打包产物，我们可以通过 <code>pnpm run preview</code> 命令预览一下打包产物的执行效果。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/15/2022, 10:18:57 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/yg-notes/vite/chapter1/" class="prev router-link-active">
+        module standard
+      </a></span> <span class="next"><a href="/yg-notes/vite/chapter2/">
+        vite中接入 css
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/yg-notes/assets/js/app.9f4c51b3.js" defer></script><script src="/yg-notes/assets/js/2.7fcefaab.js" defer></script><script src="/yg-notes/assets/js/21.0c619a97.js" defer></script>
+  </body>
+</html>
