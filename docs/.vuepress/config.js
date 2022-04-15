@@ -10,7 +10,8 @@ module.exports = {
     nav: [
       { text: 'JavaScript', link: '/jsbase/chapter1/' },
       {text: 'CSS', link: '/css/chapter1/'},
-	    {text: 'Compiler', link: '/compiler/chapter1/'}
+	    {text: 'Compiler', link: '/compiler/chapter1/'},
+      {text: 'vite小册', link: '/vite/chapter1/'}
     ],
     sidebar: {
       '/jsbase/': [
@@ -52,21 +53,43 @@ module.exports = {
         {
           title: '变量和预处理器',
           collapsable: false,
+          sidebarDepth: 2,
           children: [
             'chapter3/',
+            'chapter3/LESS.md'
           ]
         }
       ],
-	  '/compiler/': [
-		  {
-			  title: 'compiler 编辑器',
-			  collapsable: false,
-			  sidebarDepth: 2,
-			  children: [
-				  'chapter1/'
-			  ]
-		  }
-	  ]
+      '/compiler/': [
+        {
+          title: 'compiler 编辑器',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            'chapter1/'
+          ]
+        }
+      ],
+      '/vite/': [
+        {
+          title: 'vite 小册',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            'chapter1/',
+            'chapter1/quick-start'
+          ]
+        },
+        {
+          title: 'vite-project-framework',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            'chapter2/',
+            'chapter2/lint'
+          ]
+        }
+      ]
     }
   }
 }
