@@ -1,7 +1,7 @@
 module.exports = {
   base: '/yg-notes/',
   dest: 'dist',
-  title: 'JavaScript 基础知识',
+  title: 'RE 的学习小站',
   description: '对 Javascript 学习的记录总结',
   themeConfig: {
     editLinks: false,
@@ -83,7 +83,7 @@ module.exports = {
         {
           title: 'vite-project-framework',
           collapsable: false,
-          sidebarDepth: 2,
+          sidebarDepth: 3,
           children: [
             'chapter2/',
             'chapter2/lint'
