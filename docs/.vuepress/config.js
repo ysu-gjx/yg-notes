@@ -10,8 +10,14 @@ module.exports = {
     nav: [
       { text: 'JavaScript', link: '/jsbase/chapter1/' },
       {text: 'CSS', link: '/css/chapter1/'},
-	    {text: 'Compiler', link: '/compiler/chapter1/'},
-      {text: 'vite小册', link: '/vite/chapter1/'}
+      {
+        text: 'compile', 
+        ariaLabel: 'compile Menu',
+        items: [
+          {text: 'Compiler', link: '/compiler/chapter1/'},
+          {text: 'vite小册', link: '/vite/chapter1/'}
+        ]
+      }
     ],
     sidebar: {
       '/jsbase/': [
@@ -86,7 +92,8 @@ module.exports = {
           sidebarDepth: 3,
           children: [
             'chapter2/',
-            'chapter2/lint'
+            'chapter2/lint',
+            'chapter2/assets'
           ]
         }
       ]

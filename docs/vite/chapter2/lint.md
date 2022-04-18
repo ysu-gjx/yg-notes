@@ -439,8 +439,8 @@ npx husky add .husky/commit-msg "npx --no-install commitlint -e $HUSKY_GIT_PARAM
 
 至此，我们便完成了 Git 提交信息的卡点扫描和规范检查。
 
-### 小结
----
+## 小结
+
 本小节你应该了解前端的**自动化代码规范工具的使用**以及**在 Vite 中的接入方法**。
 
 我主要给你介绍了 3 个方面的自动化代码规范工具:
