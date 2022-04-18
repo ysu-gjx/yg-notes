@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vite 中处理各种静态资源 | RE 的学习小站</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="对 Javascript 学习的记录总结">
+    
+    <link rel="preload" href="/yg-notes/assets/css/0.styles.1df5dabc.css" as="style"><link rel="preload" href="/yg-notes/assets/js/app.1908f0bb.js" as="script"><link rel="preload" href="/yg-notes/assets/js/2.7fcefaab.js" as="script"><link rel="preload" href="/yg-notes/assets/js/23.0f4f933a.js" as="script"><link rel="prefetch" href="/yg-notes/assets/js/10.5d147f55.js"><link rel="prefetch" href="/yg-notes/assets/js/11.25a1b7d1.js"><link rel="prefetch" href="/yg-notes/assets/js/12.1480d4b2.js"><link rel="prefetch" href="/yg-notes/assets/js/13.f6597301.js"><link rel="prefetch" href="/yg-notes/assets/js/14.7d724b29.js"><link rel="prefetch" href="/yg-notes/assets/js/15.c1050884.js"><link rel="prefetch" href="/yg-notes/assets/js/16.e23ab3c7.js"><link rel="prefetch" href="/yg-notes/assets/js/17.f25dc830.js"><link rel="prefetch" href="/yg-notes/assets/js/18.28d8efea.js"><link rel="prefetch" href="/yg-notes/assets/js/19.6e3ee9bf.js"><link rel="prefetch" href="/yg-notes/assets/js/20.beae406b.js"><link rel="prefetch" href="/yg-notes/assets/js/21.0c619a97.js"><link rel="prefetch" href="/yg-notes/assets/js/22.8bd5d36b.js"><link rel="prefetch" href="/yg-notes/assets/js/24.782f08e5.js"><link rel="prefetch" href="/yg-notes/assets/js/3.2d6fd0ee.js"><link rel="prefetch" href="/yg-notes/assets/js/4.f09f81a7.js"><link rel="prefetch" href="/yg-notes/assets/js/5.89eafe95.js"><link rel="prefetch" href="/yg-notes/assets/js/6.0a121ed3.js"><link rel="prefetch" href="/yg-notes/assets/js/7.484f9988.js"><link rel="prefetch" href="/yg-notes/assets/js/8.89b2441f.js"><link rel="prefetch" href="/yg-notes/assets/js/9.244030ca.js">
+    <link rel="stylesheet" href="/yg-notes/assets/css/0.styles.1df5dabc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/yg-notes/" class="home-link router-link-active"><!----> <span class="site-name">RE 的学习小站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/yg-notes/jsbase/chapter1/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/yg-notes/css/chapter1/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="compile Menu" class="dropdown-title"><span class="title">compile</span> <span class="arrow down"></span></button> <button type="button" aria-label="compile Menu" class="mobile-dropdown-title"><span class="title">compile</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/yg-notes/compiler/chapter1/" class="nav-link">
+  Compiler
+</a></li><li class="dropdown-item"><!----> <a href="/yg-notes/vite/chapter1/" class="nav-link">
+  vite小册
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/yg-notes/jsbase/chapter1/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/yg-notes/css/chapter1/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="compile Menu" class="dropdown-title"><span class="title">compile</span> <span class="arrow down"></span></button> <button type="button" aria-label="compile Menu" class="mobile-dropdown-title"><span class="title">compile</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/yg-notes/compiler/chapter1/" class="nav-link">
+  Compiler
+</a></li><li class="dropdown-item"><!----> <a href="/yg-notes/vite/chapter1/" class="nav-link">
+  vite小册
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vite 小册</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/yg-notes/vite/chapter1/" class="sidebar-link">module standard</a></li><li><a href="/yg-notes/vite/chapter1/quick-start.html" class="sidebar-link">quick-start</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>vite-project-framework</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/yg-notes/vite/chapter2/" aria-current="page" class="sidebar-link">vite中接入 css</a></li><li><a href="/yg-notes/vite/chapter2/lint.html" class="sidebar-link">代码规范：利用lint工具</a></li><li><a href="/yg-notes/vite/chapter2/assets.html" aria-current="page" class="active sidebar-link">vite 中处理各种静态资源</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#图片加载" class="sidebar-link">图片加载</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#_1-使用场景" class="sidebar-link">1. 使用场景</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#_2-在-vite-中使用" class="sidebar-link">2. 在 Vite 中使用</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#_3-svg-组件方式加载" class="sidebar-link">3. SVG 组件方式加载</a></li></ul></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#json-加载" class="sidebar-link">JSON 加载</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#web-worker-脚本" class="sidebar-link">Web Worker 脚本</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#web-assembly-文件" class="sidebar-link">Web Assembly 文件</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#其它静态资源" class="sidebar-link">其它静态资源</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#特殊资源后缀" class="sidebar-link">特殊资源后缀</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#生产环境处理" class="sidebar-link">生产环境处理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#_1-自定义部署域名" class="sidebar-link">1. 自定义部署域名</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#_2-单文件-or-内联" class="sidebar-link">2. 单文件 or 内联？</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#_3-图片压缩" class="sidebar-link">3. 图片压缩</a></li><li class="sidebar-sub-header"><a href="/yg-notes/vite/chapter2/assets.html#_4-雪碧图优化" class="sidebar-link">4. 雪碧图优化</a></li></ul></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vite-中处理各种静态资源"><a href="#vite-中处理各种静态资源" class="header-anchor">#</a> vite 中处理各种静态资源</h1> <p>静态资源处理是前端工程经常遇到的问题，在真实的工程中不仅仅包含了动态执行的代码，也不可避免地要引入各种静态资源，如<code>图片</code>、<code>JSON</code>、<code>Worker</code> 文件、<code>Web Assembly</code> 文件等等。</p> <p>而静态资源本身并不是标准意义上的模块，因此对它们的处理和普通的代码是需要区别对待的。一方面我们需要解决<strong>资源加载</strong>的问题，对 Vite 来说就是如何将静态资源解析并加载为一个 ES 模块的问题；另一方面在<strong>生产环境</strong>下我们还需要考虑静态资源的部署问题、体积问题、网络性能问题，并采取相应的方案来进行优化。</p> <h2 id="图片加载"><a href="#图片加载" class="header-anchor">#</a> 图片加载</h2> <p>图片是项目中最常用的静态资源之一，本身包括了非常多的格式，诸如 <code>png</code>、<code>jpeg</code>、<code>webp</code>、<code>avif</code>、<code>gif</code>，当然，也包括经常用作图标的 <code>svg</code> 格式。这一部分我们主要讨论的是如何加载图片，也就是说怎么让图片在页面中<strong>正常显示</strong>。</p> <h3 id="_1-使用场景"><a href="#_1-使用场景" class="header-anchor">#</a> 1. 使用场景</h3> <p>在日常的项目开发过程中，我们一般会遇到三种加载图片的场景:</p> <ol><li>在 HTML 或者 JSX 中，通过 img 标签来加载图片，如:</li></ol> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>../../assets/a.png<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>img</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ol start="2"><li>在 CSS 中通过 background 属性加载图片，如:</li></ol> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">background</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'../../assets/b.png'</span><span class="token punctuation">)</span></span> norepeat<span class="token punctuation">;</span>
+</code></pre></div><ol start="3"><li>在 JavaScript 中，通过脚本的方式动态指定图片的src属性，如:</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'hero-img'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'../../assets/c.png'</span>
+</code></pre></div><h3 id="_2-在-vite-中使用"><a href="#_2-在-vite-中使用" class="header-anchor">#</a> 2. 在 Vite 中使用</h3> <p>接下来让我们在目前的脚手架项目来进行实际的编码，你可以在 Vite 的配置文件中配置一下别名，方便后续的图片引入:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts</span>
+<span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">'path'</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">{</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 别名配置</span>
+    alias<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'@assets'</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src/assets'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样 <code>Vite</code> 在遇到<code>@assets</code>路径的时候，会自动帮我们定位至根目录下的<code>src/assets</code>目录。值得注意的是，<code>alias</code> 别名配置不仅在 <code>JavaScript</code> 的 <code>import</code> 语句中生效，在 <code>CSS</code> 代码的 <code>@import</code> 和 <code>url</code>导入语句中也同样生效。</p> <p>现在 <code>src/assets</code> 目录的内容如下:</p> <div class="language- extra-class"><pre class="language-text"><code>.
+├── icons
+│   ├── favicon.svg
+│   ├── logo-1.svg
+│   ├── logo-2.svg
+│   ├── logo-3.svg
+│   ├── logo-4.svg
+│   ├── logo-5.svg
+│   └── logo.svg
+└── imgs
+    ├── background.png
+    └── vite.png
+</code></pre></div><p>接下来我们在 <code>Header</code> 组件中引入 <code>vite.png</code>这张图片:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// Header/index.tsx</span>
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useEffect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> devDependencies <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../../../package.json'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> styles <span class="token keyword">from</span> <span class="token string">'./index.module.scss'</span><span class="token punctuation">;</span>
+<span class="token comment">// 1. 导入图片</span>
+<span class="token keyword">import</span> logoSrc <span class="token keyword">from</span> <span class="token string">'@assets/imgs/vite.png'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 方式一</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">p-20px text-center </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>styles<span class="token punctuation">.</span>header<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 省略前面的组件内容 <span class="token operator">--</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 使用图片 <span class="token operator">--</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>img className<span class="token operator">=</span><span class="token string">&quot;m-auto mb-4&quot;</span> src<span class="token operator">=</span><span class="token punctuation">{</span>logoSrc<span class="token punctuation">}</span> alt<span class="token operator">=</span><span class="token string">&quot;&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 方式二</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> img <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'logo'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> HTMLImageElement<span class="token punctuation">;</span>
+    img<span class="token punctuation">.</span>src <span class="token operator">=</span> logoSrc<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">p-20px text-center </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>styles<span class="token punctuation">.</span>header<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 省略前面的组件内容 <span class="token operator">--</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 使用图片 <span class="token operator">--</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>img id<span class="token operator">=</span><span class="token string">&quot;logo&quot;</span> className<span class="token operator">=</span><span class="token string">&quot;m-auto mb-4&quot;</span> alt<span class="token operator">=</span><span class="token string">&quot;&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>可以发现图片能够正常显示:</p> <img src="/yg-notes/assets/vite/12.webp">
+而图片路径也被解析为了正确的格式(/表示项目根路径):
+<img src="/yg-notes/assets/vite/13.webp"> <p>OK，现在让我们进入 <code>Header</code> 组件的样式文件中添加<code>background</code>属性:</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">.header </span><span class="token punctuation">{</span>
+  <span class="token comment">// 前面的样式代码省略</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token url">url</span><span class="token punctuation">(</span><span class="token string">'@assets/imgs/background.png'</span><span class="token punctuation">)</span> no-repeat<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>再次回到浏览器，可以看到生效后的背景如下:
+<img src="/yg-notes/assets/vite/14.webp"></p> <h3 id="_3-svg-组件方式加载"><a href="#_3-svg-组件方式加载" class="header-anchor">#</a> 3. SVG 组件方式加载</h3> <p><code>SVG</code> 组件加载在不同的前端框架中的实现不太相同，社区中也已经了有了对应的插件支持:</p> <ul><li><code>Vue2</code> 项目中可以使用 <a href="https://github.com/pakholeung37/vite-plugin-vue2-svg" target="_blank" rel="noopener noreferrer">vite-plugin-vue2-svg<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>插件。</li> <li><code>Vue3</code> 项目中可以引入 <a href="https://github.com/jpkleemans/vite-svg-loader" target="_blank" rel="noopener noreferrer">vite-svg-loader<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</li> <li><code>React</code> 项目使用 <a href="https://github.com/pd4d10/vite-plugin-svgr" target="_blank" rel="noopener noreferrer">vite-plugin-svgr<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>插件。</li></ul> <p>现在让我们在 React 脚手架项目中安装对应的依赖:</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">pnpm</span> i vite-plugin-svgr -D
+</code></pre></div><p>然后需要在 <code>vite</code> 配置文件添加这个插件:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts</span>
+<span class="token keyword">import</span> svgr <span class="token keyword">from</span> <span class="token string">'vite-plugin-svgr'</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 其它插件省略</span>
+    <span class="token function">svgr</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>随后注意要在 <code>tsconfig.json</code> 添加如下配置，否则会有类型错误:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;compilerOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 省略其它配置</span>
+    <span class="token property">&quot;types&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;vite-plugin-svgr/client&quot;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>接下来让我们在项目中使用 svg 组件:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> ReactComponent <span class="token keyword">as</span> ReactLogo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@assets/icons/logo.svg'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token comment">// 其他组件内容省略</span>
+     <span class="token operator">&lt;</span>ReactLogo <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>回到浏览器中，你可以看到 svg 已经成功渲染:</p> <img src="/yg-notes/assets/vite/15.webp"> <h2 id="json-加载"><a href="#json-加载" class="header-anchor">#</a> JSON 加载</h2> <p><code>Vite</code> 中已经内置了对于 <code>JSON</code> 文件的解析，底层使用<code>@rollup/pluginutils</code> 的 <code>dataToEsm</code> 方法将 <code>JSON</code> 对象转换为一个包含各种具名导出的 <code>ES</code> 模块，使用姿势如下:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> version <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../../../package.json'</span><span class="token punctuation">;</span>
+</code></pre></div><p>不过你也可以在配置文件禁用按名导入的方式:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts</span>
+
+<span class="token punctuation">{</span>
+  json<span class="token operator">:</span> <span class="token punctuation">{</span>
+    stringify<span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样会将 <code>JSON</code> 的内容解析为<code>export default JSON.parse(&quot;xxx&quot;)</code>，这样会失去按名导出的能力，不过在 <code>JSON</code> 数据量比较大的时候，可以优化解析性能。</p> <h2 id="web-worker-脚本"><a href="#web-worker-脚本" class="header-anchor">#</a> Web Worker 脚本</h2> <p><code>Vite</code> 中使用 <code>Web Worker</code> 也非常简单，我们可以在新建<code>Header/example.js</code>文件:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">start</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 给主线程传值</span>
+    <span class="token function">postMessage</span><span class="token punctuation">(</span><span class="token operator">++</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>然后在 <code>Header</code> 组件中引入，引入的时候注意加上<code>?worker</code>后缀，相当于告诉 <code>Vite</code> 这是一个 <code>Web Worker</code> 脚本文件:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> Worker <span class="token keyword">from</span> <span class="token string">'./example.js?worker'</span><span class="token punctuation">;</span>
+<span class="token comment">// 1. 初始化 Worker 实例</span>
+<span class="token keyword">const</span> worker <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 2. 主线程监听 worker 的信息</span>
+worker<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>打开浏览器的控制面板，你可以看到 <code>Worker</code> 传给主线程的信息已经成功打印:</p> <img src="/yg-notes/assets/vite/16.webp">
+说明 Web Worker 脚本已经成功执行，也能与主线程正常通信。
+<h2 id="web-assembly-文件"><a href="#web-assembly-文件" class="header-anchor">#</a> Web Assembly 文件</h2> <p>Vite 对于 <code>.wasm</code> 文件也提供了开箱即用的支持，我们拿一个斐波拉契的 <code>.wasm</code> 文件(原文件已经放到<a href="https://github.com/sanyuan0704/juejin-book-vite/tree/main/4~7-vite-project-framework/src/components/Header" target="_blank" rel="noopener noreferrer">Github<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 仓库中)来进行一下实际操作，对应的 JavaScript 原文件如下:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">--</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> t <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+      a <span class="token operator">=</span> b<span class="token punctuation">;</span>
+      b <span class="token operator">=</span> t<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> b<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>让我们在组件中导入<code>fib.wasm</code>文件:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// Header/index.tsx</span>
+<span class="token keyword">import</span> init <span class="token keyword">from</span> <span class="token string">'./fib.wasm'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">type</span> <span class="token class-name">FibFunc</span> <span class="token operator">=</span> <span class="token punctuation">(</span>num<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+
+<span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>exports<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> fibFunc <span class="token operator">=</span> exports<span class="token punctuation">.</span>fib <span class="token keyword">as</span> FibFunc<span class="token punctuation">;</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Fib result:'</span><span class="token punctuation">,</span> <span class="token function">fibFunc</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Vite 会对<code>.wasm</code>文件的内容进行封装，默认导出为 <code>init</code> 函数，这个函数返回一个 <code>Promise</code>，因此我们可以在其 <code>then</code> 方法中拿到其导出的成员——<code>fib</code>方法。</p> <p>回到浏览器，我们可以查看到计算结果，说明 <code>.wasm</code> 文件已经被成功执行:</p> <img src="/yg-notes/assets/vite/17.webp"> <h2 id="其它静态资源"><a href="#其它静态资源" class="header-anchor">#</a> 其它静态资源</h2> <p>除了上述的一些资源格式，Vite 也对下面几类格式提供了内置的支持:</p> <ul><li>媒体类文件，包括<code>mp4</code>、<code>webm</code>、<code>ogg</code>、<code>mp3</code>、<code>wav</code>、<code>flac</code>和<code>aac</code>。</li> <li>字体类文件。包括<code>woff</code>、<code>woff2</code>、<code>eot</code>、<code>ttf</code> 和 <code>otf</code>。</li> <li>文本类。包括<code>webmanifest</code>、<code>pdf</code>和<code>txt</code>。</li></ul> <p>也就是说，你可以在 <code>Vite</code> 将这些类型的文件当做一个 ES 模块来导入使用。如果你的项目中还存在其它格式的静态资源，你可以通过<code>assetsInclude</code>配置让 <code>Vite</code> 来支持加载:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts</span>
+
+<span class="token punctuation">{</span>
+  assetsInclude<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'.gltf'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="特殊资源后缀"><a href="#特殊资源后缀" class="header-anchor">#</a> 特殊资源后缀</h2> <p>Vite 中引入静态资源时，也支持在路径最后加上一些特殊的 query 后缀，包括:</p> <ul><li><code>?url</code>: 表示获取资源的路径，这在只想获取文件路径而不是内容的场景将会很有用。</li> <li><code>?raw</code>: 表示获取资源的字符串内容，如果你只想拿到资源的原始内容，可以使用这个后缀。</li> <li><code>?inline</code>: 表示资源强制内联，而不是打包成单独的文件。</li></ul> <h2 id="生产环境处理"><a href="#生产环境处理" class="header-anchor">#</a> 生产环境处理</h2> <p>在前面的内容中，我们围绕着如何加载静态资源这个问题，在 Vite 中进行具体的编码实践，相信对于 Vite 中各种静态资源的使用你已经比较熟悉了。但另一方面，在生产环境下，我们又面临着一些新的问题。</p> <ul><li>部署域名怎么配置？</li> <li>资源打包成单文件还是作为 Base64 格式内联?</li> <li>图片太大了怎么压缩？</li> <li>svg 请求数量太多了怎么优化？</li></ul> <h3 id="_1-自定义部署域名"><a href="#_1-自定义部署域名" class="header-anchor">#</a> 1. 自定义部署域名</h3> <p>一般在我们访问线上的站点时，站点里面一些静态资源的地址都包含了相应域名的前缀，如:</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://sanyuan.cos.ap-beijing.myqcloud.com/logo.png<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre></div><p>以上面这个地址例子，<code>https://sanyuan.cos.ap-beijing.myqcloud.com</code>是 CDN 地址前缀，<code>/logo.png</code>则是我们开发阶段使用的路径。那么，我们是不是需要在上线前把图片先上传到 CDN，然后将代码中的地址手动替换成线上地址呢？这样就太麻烦了！</p> <p>在 Vite 中我们可以有更加自动化的方式来实现地址的替换，只需要在配置文件中指定<code>base</code>参数即可:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts</span>
+<span class="token comment">// 是否为生产环境，在生产环境一般会注入 NODE_ENV 这个环境变量，见下面的环境变量文件配置</span>
+<span class="token keyword">const</span> isProduction <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span><span class="token punctuation">;</span>
+<span class="token comment">// 填入项目的 CDN 域名地址</span>
+<span class="token keyword">const</span> <span class="token constant">CDN_URL</span> <span class="token operator">=</span> <span class="token string">'xxxxxx'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 具体配置</span>
+<span class="token punctuation">{</span>
+  base<span class="token operator">:</span> isProduction <span class="token operator">?</span> <span class="token constant">CDN_URL</span><span class="token operator">:</span> <span class="token string">'/'</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// .env.development</span>
+<span class="token constant">NODE_ENV</span><span class="token operator">=</span>development
+
+<span class="token comment">// .env.production</span>
+<span class="token constant">NODE_ENV</span><span class="token operator">=</span>production
+</code></pre></div><p>注意在项目根目录新增的两个环境变量文件<code>.env.development</code>和<code>.env.production</code>，顾名思义，即分别在开发环境和生产环境注入一些环境变量，这里为了区分不同环境我们加上了<code>NODE_ENV</code>，你也可以根据需要添加别的环境变量。</p> <blockquote><p>打包的时候 Vite 会自动将这些环境变量替换为相应的字符串。</p></blockquote> <p>接着执行<code>pnpm run build</code>，可以发现产物中的静态资源地址已经自动加上了 <code>CDN</code> 地址前缀:
+<img src="/yg-notes/assets/vite/18.webp"></p> <p>当然，HTML 中的一些 JS、CSS 资源链接也一起加上了 CDN 地址前缀:
+<img src="/yg-notes/assets/vite/19.webp"></p> <p>当然，有时候可能项目中的某些图片需要存放到另外的存储服务，一种直接的方案是将完整地址写死到 src 属性中，如:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">&quot;https://my-image-cdn.com/logo.png&quot;</span><span class="token operator">&gt;</span>
+</code></pre></div><p>这样做显然是不太优雅的，我们可以通过定义环境变量的方式来解决这个问题，在项目根目录新增<code>.env</code>文件:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// 开发环境优先级: .env.development &gt; .env</span>
+<span class="token comment">// 生产环境优先级: .env.production &gt; .env</span>
+<span class="token comment">// .env 文件</span>
+<span class="token constant">VITE_IMG_BASE_URL</span><span class="token operator">=</span>https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>my<span class="token operator">-</span>image<span class="token operator">-</span>cdn<span class="token punctuation">.</span>com
+</code></pre></div><p>然后进入 <code>src/vite-env.d.ts</code>增加类型声明:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">/// &lt;reference types=&quot;vite/client&quot; /&gt;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">ImportMetaEnv</span> <span class="token punctuation">{</span>
+  <span class="token keyword">readonly</span> <span class="token constant">VITE_APP_TITLE</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  <span class="token comment">// 自定义的环境变量</span>
+  <span class="token keyword">readonly</span> <span class="token constant">VITE_IMG_BASE_URL</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">ImportMeta</span> <span class="token punctuation">{</span>
+  <span class="token keyword">readonly</span> env<span class="token operator">:</span> ImportMetaEnv<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>值得注意的是，如果某个环境变量要在 Vite 中通过 <code>import.meta.env</code> 访问，那么它必须以<code>VITE_</code>开头，如<code>VITE_IMG_BASE_URL</code>。接下来我们在组件中来使用这个环境变量:</p> <div class="language-html extra-class"><pre class="language-html"><code>&lt;img src={new URL('./logo.png', import.meta.env.VITE_IMG_BASE_URL).href} /&gt;
+</code></pre></div><p>接下来在<strong>开发环境</strong>启动项目或者<strong>生产环境</strong>打包后可以看到环境变量已经被替换，地址能够正常显示:</p> <img src="/yg-notes/assets/vite/20.webp"> <img src="/yg-notes/assets/vite/21.webp"> <h3 id="_2-单文件-or-内联"><a href="#_2-单文件-or-内联" class="header-anchor">#</a> 2. 单文件 or 内联？</h3> <p>在 Vite 中，所有的静态资源都有两种构建方式，一种是打包成一个单文件，另一种是通过 base64 编码的格式内嵌到代码中。</p> <p>这两种方案到底应该如何来选择呢？</p> <p>对于比较小的资源，适合内联到代码中，一方面对<strong>代码体积</strong>的影响很小，另一方面可以减少不必要的网络请求，<strong>优化网络性能</strong>。而对于比较大的资源，就推荐单独打包成一个文件，而不是内联了，否则可能导致上 MB 的 base64 字符串内嵌到代码中，导致代码体积瞬间庞大，页面加载性能直线下降。</p> <img src="/yg-notes/assets/vite/22.webp"> <p>Vite 中内置的优化方案是下面这样的:</p> <ul><li>如果静态资源体积 <code>&gt;= 4KB</code>，则提取成单独的文件</li> <li>如果静态资源体积 <code>&lt; 4KB</code>，则作为 base64 格式的字符串内联</li></ul> <p>上述的<code>4 KB</code>即为提取成单文件的临界值，当然，这个临界值你可以通过<code>build.assetsInlineLimit</code>自行配置，如下代码所示:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts</span>
+<span class="token punctuation">{</span>
+  build<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 8 KB</span>
+    assetsInlineLimit<span class="token operator">:</span> <span class="token number">8</span> <span class="token operator">*</span> <span class="token number">1024</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p><code>svg</code> 格式的文件不受这个临时值的影响，始终会打包成单独的文件，因为它和普通格式的图片不一样，需要动态设置一些属性</p></blockquote> <h3 id="_3-图片压缩"><a href="#_3-图片压缩" class="header-anchor">#</a> 3. 图片压缩</h3> <p>图片资源的体积往往是项目产物体积的大头，如果能尽可能精简图片的体积，那么对项目整体打包产物体积的优化将会是非常明显的。在 <code>JavaScript</code> 领域有一个非常知名的图片压缩库<a href="https://www.npmjs.com/package/imagemin" target="_blank" rel="noopener noreferrer">imagemin<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，作为一个底层的压缩工具，前端的项目中经常基于它来进行图片压缩，比如 <code>Webpack</code> 中大名鼎鼎的<code>image-webpack-loader</code>。社区当中也已经有了开箱即用的 <code>Vite</code> 插件——<code>vite-plugin-imagemin</code>，首先让我们来安装它:</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">pnpm</span> i vite-plugin-imagemin -D
+</code></pre></div><p>如果一直下载失败可以在 <code>package.json</code> 中配置</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token property">&quot;resolutions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">&quot;bin-wrapper&quot;</span><span class="token operator">:</span> <span class="token string">&quot;npm:bin-wrapper-china&quot;</span>
+<span class="token punctuation">}</span> 
+</code></pre></div><p>随后在 Vite 配置文件中引入:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">//vite.config.ts</span>
+<span class="token keyword">import</span> viteImagemin <span class="token keyword">from</span> <span class="token string">'vite-plugin-imagemin'</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 忽略前面的插件</span>
+    <span class="token function">viteImagemin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// 无损压缩配置，无损压缩下图片质量不会变差</span>
+      optipng<span class="token operator">:</span> <span class="token punctuation">{</span>
+        optimizationLevel<span class="token operator">:</span> <span class="token number">7</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// 有损压缩配置，有损压缩下图片质量可能会变差</span>
+      pngquant<span class="token operator">:</span> <span class="token punctuation">{</span>
+        quality<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// svg 优化</span>
+      svgo<span class="token operator">:</span> <span class="token punctuation">{</span>
+        plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            name<span class="token operator">:</span> <span class="token string">'removeViewBox'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            name<span class="token operator">:</span> <span class="token string">'removeEmptyAttrs'</span><span class="token punctuation">,</span>
+            active<span class="token operator">:</span> <span class="token boolean">false</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>接下来我们可以尝试执行<code>pnpm run build</code>进行打包:</p> <img src="/yg-notes/assets/vite/23.webp"> <p>Vite 插件已经自动帮助我们调用 imagemin 进行项目图片的压缩，可以看到压缩的效果非常明显，强烈推荐大家在项目中使用。</p> <h3 id="_4-雪碧图优化"><a href="#_4-雪碧图优化" class="header-anchor">#</a> 4. 雪碧图优化</h3> <p>在实际的项目中我们还会经常用到各种各样的 svg 图标，虽然 svg 文件一般体积不大，但 Vite 中对于 svg 文件会始终打包成单文件，大量的图标引入之后会导致网络请求增加，大量的 HTTP 请求会导致网络解析耗时变长，页面加载性能直接受到影响。这个问题怎么解决呢？</p> <blockquote><p>HTTP2 的多路复用设计可以解决大量 HTTP 的请求导致的网络加载性能问题，因此雪碧图技术在 HTTP2 并没有明显的优化效果，这个技术更适合在传统的 HTTP 1.1 场景下使用(比如本地的 Dev Server)。</p></blockquote> <p>比如在 <code>Header</code> 中分别引入 5 个 svg 文件:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> Logo1 <span class="token keyword">from</span> <span class="token string">'@assets/icons/logo-1.svg'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Logo2 <span class="token keyword">from</span> <span class="token string">'@assets/icons/logo-2.svg'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Logo3 <span class="token keyword">from</span> <span class="token string">'@assets/icons/logo-3.svg'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Logo4 <span class="token keyword">from</span> <span class="token string">'@assets/icons/logo-4.svg'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Logo5 <span class="token keyword">from</span> <span class="token string">'@assets/icons/logo-5.svg'</span><span class="token punctuation">;</span>
+</code></pre></div><p>这里顺便说一句，<code>Vite</code> 中提供了<code>import.meta.glob</code>的语法糖来解决这种<strong>批量导入</strong>的问题，如上述的 import 语句可以写成下面这样:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">const</span> icons <span class="token operator">=</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span><span class="token function">glob</span><span class="token punctuation">(</span><span class="token string">'../../assets/icons/logo-*.svg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>结果如下:
+<img src="/yg-notes/assets/vite/24.webp"></p> <p>可以看到对象的 <code>value</code> 都是动态 <code>import</code>，适合按需加载的场景。在这里我们只需要同步加载即可，可以使用 <code>import.meta.globEager</code>来完成:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">const</span> icons <span class="token operator">=</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span><span class="token function">globEager</span><span class="token punctuation">(</span><span class="token string">'../../assets/icons/logo-*.svg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p><code>icons</code>的结果打印如下:
+<img src="/yg-notes/assets/vite/25.webp"></p> <p>接下来我们稍作解析，然后将 svg 应用到组件当中:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// Header/index.tsx</span>
+<span class="token keyword">const</span> iconUrls <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>icons<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>mod <span class="token operator">=&gt;</span> mod<span class="token punctuation">.</span><span class="token keyword">default</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 组件返回内容添加如下</span>
+<span class="token punctuation">{</span>iconUrls<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token punctuation">{</span>item<span class="token punctuation">}</span> key<span class="token operator">=</span><span class="token punctuation">{</span>item<span class="token punctuation">}</span> width<span class="token operator">=</span><span class="token string">&quot;50&quot;</span> alt<span class="token operator">=</span><span class="token string">&quot;&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/18/2022, 4:53:26 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/yg-notes/vite/chapter2/lint.html" class="prev">
+        代码规范：利用lint工具
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/yg-notes/assets/js/app.1908f0bb.js" defer></script><script src="/yg-notes/assets/js/2.7fcefaab.js" defer></script><script src="/yg-notes/assets/js/23.0f4f933a.js" defer></script>
+  </body>
+</html>
