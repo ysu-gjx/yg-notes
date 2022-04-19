@@ -462,3 +462,88 @@ const iconUrls = Object.values(icons).map(mod => mod.default);
   <img src={item} key={item} width="50" alt="" />
 ))}
 ```
+回到页面中，我们发现浏览器分别发出了 5 个 svg 的请求:
+<img :src="$withBase('/assets/vite/26.webp')" />
+
+假设页面有 100 个 svg 图标，将会多出 100 个 HTTP 请求，依此类推。我们能不能把这些 svg 合并到一起，从而大幅减少网络请求呢？
+
+这种合并图标的方案也叫**雪碧图**，我们可以通过`vite-plugin-svg-icons`来实现这个方案，首先安装一下这个插件:
+```shell
+pnpm i vite-plugin-svg-icons -D
+```
+接着在 Vite 配置文件中增加如下内容:
+```ts
+// vite.config.ts
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+
+{
+  plugins: [
+    // 省略其它插件
+    createSvgIconsPlugin({
+      iconDirs: [path.join(__dirname, 'src/assets/icons')]
+    })
+  ]
+}
+```
+在 `src/components`目录下新建`SvgIcon`组件:
+```ts
+// SvgIcon/index.tsx
+export interface SvgIconProps {
+  name?: string;
+  prefix: string;
+  color: string;
+  [key: string]: string;
+}
+
+export default function SvgIcon({
+  name,
+  prefix = 'icon',
+  color = '#333',
+  ...props
+}: SvgIconProps) {
+  const symbolId = `#${prefix}-${name}`;
+
+  return (
+    <svg {...props} aria-hidden="true">
+      <use href={symbolId} fill={color} />
+    </svg>
+  );
+}
+```
+现在我们回到 `Header` 组件中，稍作修改:
+```ts
+// index.tsx
+const icons = import.meta.globEager('../../assets/icons/logo-*.svg');
+const iconUrls = Object.values(icons).map((mod) => {
+  // 如 ../../assets/icons/logo-1.svg -> logo-1
+  const fileName = mod.default.split('/').pop();
+  const [svgName] = fileName.split('.');
+  return svgName;
+});
+
+// 渲染 svg 组件
+{iconUrls.map((item) => (
+  <SvgIcon name={item} key={item} width="50" height="50" />
+))}
+```
+最后在`src/main.tsx`文件中添加一行代码:
+```ts
+import 'virtual:svg-icons-register';
+```
+现在回到浏览器的页面中，发现雪碧图已经生成:
+<img :src="$withBase('/assets/vite/27.webp')" />
+
+雪碧图包含了所有图标的具体内容，而对于页面每个具体的图标，则通过 `use` 属性来引用雪碧图的对应内容:
+
+<img :src="$withBase('/assets/vite/28.webp')" />
+
+如此一来，我们就能将所有的 `svg` 内容都内联到 `HTML` 中，省去了大量 `svg` 的网络请求。
+
+## 小结
+
+重点掌握在`Vite` 如何**加载静态资源**和如何在**生产环境中对静态资源进行优化**。
+
+首先是如何加载各种静态资源，如`图片`、`svg`(组件形式)、`JSON`、`Web Worker` 脚本、`Web Asssembly` 文件等等格式
+
+其次，我们会把关注点放到**生产环境**，对`自定义部署域名`、`是否应该内联`、`图片压缩`、`svg 雪碧图`等问题进行了详细的探讨和实践
+

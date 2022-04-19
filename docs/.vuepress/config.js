@@ -93,7 +93,8 @@ module.exports = {
           children: [
             'chapter2/',
             'chapter2/lint',
-            'chapter2/assets'
+            'chapter2/assets',
+            'chapter2/pre-bundling'
           ]
         }
       ]
