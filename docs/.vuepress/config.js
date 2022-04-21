@@ -11,11 +11,24 @@ module.exports = {
       { text: 'JavaScript', link: '/jsbase/chapter1/' },
       {text: 'CSS', link: '/css/chapter1/'},
       {
+        text: 'vue',
+        items: [
+          {text: 'vue3', link: '/vue3/chapter1/'}
+        ]
+      },
+      {
         text: 'compile', 
         ariaLabel: 'compile Menu',
         items: [
           {text: 'Compiler', link: '/compiler/chapter1/'},
           {text: 'vite小册', link: '/vite/chapter1/'}
+        ]
+      },
+      {
+        text: 'algorithm', 
+        ariaLabel: 'algorithm Menu',
+        items: [
+          {text: 'algorithm', link: '/algorithm/chapter1/'},
         ]
       }
     ],
@@ -95,6 +108,26 @@ module.exports = {
             'chapter2/lint',
             'chapter2/assets',
             'chapter2/pre-bundling'
+          ]
+        }
+      ],
+      '/algorithm/': [
+        {
+          title: 'algorithm-base',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            'chapter1/'
+          ]
+        }
+      ],
+      '/vue3/': [
+        {
+          title: 'vue3',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            'chapter1/'
           ]
         }
       ]
