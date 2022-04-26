@@ -109,6 +109,15 @@ module.exports = {
             'chapter2/assets',
             'chapter2/pre-bundling'
           ]
+        },
+        {
+          title: '双引擎架构',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            'chapter3/',
+            'chapter3/esbuild-plugin'
+          ]
         }
       ],
       '/algorithm/': [
@@ -117,7 +126,8 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 2,
           children: [
-            'chapter1/'
+            'chapter1/',
+            'chapter1/1'
           ]
         }
       ],
