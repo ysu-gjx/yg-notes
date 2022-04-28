@@ -1,39 +1,36 @@
-/**
- * @param {string} s
- * @return {string}
- */
- var longestPalindrome = function(s) {
+
+var longestPalindrome = function(s) {
   if (s == null) return null
 
-  let longest = ''
-  for (let i = 0; i < s.length; i++) {
-    // odd
-    let oddPalindorme = getPalindrome(s, i, i)
-    if (longest.length < oddPalindorme.length) {
-      longest = oddPalindorme
-    }
+  let len = s.length
+  let isPalindrome = []
+  
+  for (let i = 0; i < len; i++) {
+    isPalindrome.push([false])
+    isPalindrome[i][i] = true
+  }
 
-    // even
-    let evenPalindorme = getPalindrome(s, i, i+1)
-    if (longest.length < evenPalindorme.length) {
-      longest = evenPalindorme
+  console.log(isPalindrome)
+  for (let i = len - 2; i >= 0; i--) {
+    for (let j = i + 1; j < len; j++) {
+      if (isPalindrome[i + 1][j - 1] && s[i] === s[j]) {
+        console.log(111)
+        isPalindrome[i][j] = true
+      }
     }
+  }
+
+  let longest = ''
+  for (let i = 0; i < len; i++) {
+    for (let j = i; j < len; j++) {
+      if (isPalindrome[i][j] && longest.length < (j - i + 1)) {
+        longest = s.substring(i, j + 1)
+      }
+    }
+    
   }
 
   return longest
-};
-
-/**
- * @param {string} s 
- * @param {number} left 
- * @param {number} right 
- * @returns {string}
- */
-function getPalindrome(s, left, right) {
-
-  while (left >= 0 && right <s.length && s[left] === s[right]) {
-    left--
-    right++
-  }
-  return s.substring(left+1, right -1)
 }
+
+console.log(longestPalindrome('babad'))
