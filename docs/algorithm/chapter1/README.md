@@ -136,7 +136,7 @@ function copy_edges(nodes, mapping) {
   - 确保一个函数内部不超过3层缩进(indention)
   - `多用子函数来减少入口函数的代码量`
   - `多用 continue 少用 if`
-```sh
+```js
   for ...
     if 条件1
     做一些处理...
@@ -159,6 +159,37 @@ function copy_edges(nodes, mapping) {
     做一些处理...
     做一些处理...
     做一些处理...
+
+
+  if 异常情况不够
+    ...
+    return
+
+
+  if (A) {
+    if (B) {
+      ...
+    } else {
+      ...
+    }
+  } else {
+    if (B) {
+      ...
+    } else {
+      ..
+    }
+  }
+
+
+  if (A && B) {
+    ...
+  }
+
+  if (A && !B) {
+    ...
+  }
+  ...
+  ...
 ```
 
 - Bug Free 相关

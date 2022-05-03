@@ -17,6 +17,12 @@ module.exports = {
         ]
       },
       {
+        text: 'books',
+        items: [
+          {text: 'vue.js 设计与实现', link: '/books/vuejs/chapter1/'}
+        ]
+      },
+      {
         text: 'compile', 
         ariaLabel: 'compile Menu',
         items: [
@@ -134,6 +140,16 @@ module.exports = {
       '/vue3/': [
         {
           title: 'vue3',
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            'chapter1/'
+          ]
+        }
+      ],
+      '/books/vuejs/': [
+        {
+          title: '框架设计概览',
           collapsable: false,
           sidebarDepth: 2,
           children: [
