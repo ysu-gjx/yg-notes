@@ -122,7 +122,8 @@ module.exports = {
           sidebarDepth: 2,
           children: [
             'chapter3/',
-            'chapter3/esbuild-plugin'
+            'chapter3/esbuild-plugin',
+            'chapter3/rollup'
           ]
         }
       ],
