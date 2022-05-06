@@ -123,7 +123,8 @@ module.exports = {
           children: [
             'chapter3/',
             'chapter3/esbuild-plugin',
-            'chapter3/rollup'
+            'chapter3/rollup',
+            'chapter3/rollup-plugin'
           ]
         }
       ],
